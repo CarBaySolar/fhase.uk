@@ -1,30 +1,496 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Fhase | Fire, Health, Safety & Energy</title>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description"
-        content="Fhase helps organisations stay compliant and energy-efficient without unnecessary controls, paperwork or operational disruption." />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FHASE | Fire, Health, Safety & Energy</title>
+  <meta name="description" content="FHASE helps organisations stay compliant and energy-efficient without unnecessary controls, paperwork or operational disruption—focusing on proportionate risk management that protects people, buildings and day-to-day operations." />
 
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: #0e1116;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    :root{
+      --ink:#0f172a;
+      --muted:#475569;
+      --bg:#ffffff;
+      --panel:#f8fafc;
+      --line:#e2e8f0;
+
+      /* Brand purple (aligned to your logo direction) */
+      --brand:#7A1FA2;
+
+      /* Pillar accents */
+      --fire:#b23b3b;
+      --hs:#c07a2f;
+      --energy:#3e7b45;
+
+      --shadow: 0 10px 26px rgba(2,6,23,.08);
+      --radius: 18px;
+      --max: 1120px;
     }
 
-    .hero {
-      width: 100%;
-      min-height: 100vh;
-      background: url("assets/images/fhase-landing-hero-v1-optimised.png")
-                  center / cover no-repeat;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.55;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
+
+    /* Header */
+    header{
+      position:sticky;
+      top:0;
+      background:rgba(255,255,255,.92);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:50;
+    }
+    .header-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:12px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width: 220px;
+      text-decoration:none;
+    }
+    .brand img{
+      height:46px;
+      width:auto;
+      display:block;
+    }
+    .brand-name{
+      display:flex;
+      flex-direction:column;
+      line-height:1.1;
+    }
+    .brand-name strong{
+      font-size:16px;
+      letter-spacing:.12em;
+    }
+    .brand-name span{
+      font-size:12px;
+      color:var(--muted);
+      letter-spacing:.02em;
+    }
+
+    nav{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .nav-pill{
+      font-size:13px;
+      color:var(--muted);
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+      text-decoration:none;
+    }
+    .nav-pill:hover{
+      border-color:var(--line);
+      color:var(--ink);
+      background:#fff;
+    }
+    .cta{
+      margin-left:4px;
+      background:var(--brand);
+      color:#fff;
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:650;
+      text-decoration:none;
+      box-shadow: 0 12px 22px rgba(122,31,162,.18);
+    }
+    .cta:hover{filter:brightness(.96)}
+
+    /* Hero */
+    .hero{padding:54px 0 22px}
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:20px;
+      align-items:start;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size:40px;
+      line-height:1.12;
+      letter-spacing:-.02em;
+    }
+    .hero p{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:16px;
+      max-width: 68ch;
+    }
+    .tagline{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:14px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .tag{
+      background:var(--panel);
+      border:1px solid var(--line);
+      padding:8px 10px;
+      border-radius:999px;
+    }
+    .quick-card{
+      background:linear-gradient(180deg, #ffffff, #f8fafc);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding:18px;
+      box-shadow: var(--shadow);
+    }
+    .quick-card h3{
+      margin:0 0 10px;
+      font-size:13px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--brand);
+    }
+    .quick-card ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .quick-card li{margin:8px 0}
+    .emph{font-weight:700; color:var(--ink)}
+
+    /* Service cards */
+    .services{padding:10px 0 42px}
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:18px;
+    }
+    .card{
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      display:flex;
+      flex-direction:column;
+      min-height: 330px;
+    }
+    .card-head{
+      padding:16px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      color:#fff;
+      font-weight:750;
+      letter-spacing:.01em;
+    }
+    .card-head span{font-size:18px}
+    .badge{
+      font-size:12px;
+      font-weight:700;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.18);
+      border:1px solid rgba(255,255,255,.22);
+      white-space:nowrap;
+    }
+    .card-body{
+      padding:16px 18px 18px;
+      color:var(--muted);
+      font-size:14px;
+      flex:1;
+    }
+    .card-body ul{margin:0; padding-left:18px}
+    .card-body li{margin:10px 0}
+
+    /* Fire doors highlight */
+    .feature{
+      padding:10px 0 52px;
+    }
+    .feature-box{
+      border:1px solid var(--line);
+      background:var(--panel);
+      border-radius: var(--radius);
+      padding:22px;
+      box-shadow: var(--shadow);
+      display:grid;
+      grid-template-columns: 1fr .9fr;
+      gap:16px;
+      align-items:start;
+    }
+    .feature-box h2{
+      margin:0 0 8px;
+      font-size:22px;
+      letter-spacing:-.01em;
+    }
+    .feature-box p{margin:0; color:var(--muted); font-size:14px}
+    .feature-list{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .feature-list li{margin:8px 0}
+    .mini-cta{
+      display:inline-block;
+      margin-top:14px;
+      background:#fff;
+      border:1px solid rgba(122,31,162,.25);
+      color:var(--brand);
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:700;
+      text-decoration:none;
+    }
+    .mini-cta:hover{background:rgba(122,31,162,.06)}
+
+    /* Why engage + framework */
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:18px;
+      padding:26px 0 54px;
+      border-top:1px solid var(--line);
+    }
+    .box{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding:18px;
+      box-shadow: var(--shadow);
+    }
+    .box h3{
+      margin:0 0 10px;
+      font-size:16px;
+      letter-spacing:-.01em;
+    }
+    .box p{margin:0; color:var(--muted); font-size:14px}
+    .box ul{margin:10px 0 0; padding-left:18px; color:var(--muted); font-size:14px}
+    .box li{margin:8px 0}
+
+    /* Footer */
+    footer{
+      border-top:1px solid var(--line);
+      padding:26px 0 36px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+    }
+    .footer-grid a{ text-decoration:underline; text-underline-offset:3px; }
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .hero-grid{grid-template-columns: 1fr}
+      .cards{grid-template-columns: 1fr}
+      .feature-box{grid-template-columns: 1fr}
+      .split{grid-template-columns: 1fr}
+      h1{font-size:34px}
+      .brand-name span{display:none}
     }
   </style>
 </head>
+
 <body>
-  <div class="hero"></div>
+
+<header>
+  <div class="wrap">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="FHASE home">
+        <img src="/assets/fhase-logo.png" alt="FHASE logo">
+        <div class="brand-name">
+          <strong>FHASE</strong>
+          <span>Fire • Health &amp; Safety • Energy</span>
+        </div>
+      </a>
+
+      <nav>
+        <a class="nav-pill" href="#fire">Fire</a>
+        <a class="nav-pill" href="#hs">Health &amp; Safety</a>
+        <a class="nav-pill" href="#energy">Energy</a>
+        <a class="nav-pill" href="#contact">Contact</a>
+        <a class="cta" href="mailto:info@fhase.uk?subject=FHASE%20Enquiry%20via%20fhase.uk">Request Consultation</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <h1>Protecting people, premises and operations — <span style="color:var(--brand)">proportionately</span>.</h1>
+          <p>
+            FHASE helps organisations stay compliant and energy-efficient without unnecessary controls, paperwork
+            or operational disruption — focusing on proportionate risk management that protects people, buildings
+            and day-to-day operations.
+          </p>
+
+          <div class="tagline">
+            <div class="tag">Competence-led</div>
+            <div class="tag">Evidence-based</div>
+            <div class="tag">Operationally realistic</div>
+            <div class="tag">Clear reporting</div>
+          </div>
+        </div>
+
+        <aside class="quick-card">
+          <h3>Core Support</h3>
+          <ul>
+            <li>Fire risk assessments &amp; audits (proportionate scope)</li>
+            <li><span class="emph">Fire door inspections</span> (FDIS-aligned checks &amp; reporting)</li>
+            <li>Contractor governance &amp; RAMS reviews</li>
+            <li>Solar / EV / battery safety interface advisory</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="wrap">
+      <div class="cards">
+
+        <article class="card" id="fire">
+          <div class="card-head" style="background:var(--fire)">
+            <span>Fire</span>
+            <div class="badge">Risk • Controls • Assurance</div>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Fire risk assessments and audits</li>
+              <li>Fire safety arrangements and controls review</li>
+              <li>Compartmentation and fire door condition advisory</li>
+              <li><span class="emph">Fire door inspections</span> (FDIS-aligned methodology)</li>
+              <li>Detection and warning system risk interface review</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card" id="hs">
+          <div class="card-head" style="background:var(--hs)">
+            <span>Health &amp; Safety</span>
+            <div class="badge">Systems • RAMS • Culture</div>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Workplace and operational risk assessments</li>
+              <li>Policies, procedures and safe systems of work</li>
+              <li>Incident / near-miss frameworks and investigation support</li>
+              <li>Contractor governance and RAMS reviews</li>
+              <li>Audit preparation and proportionate compliance support</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card" id="energy">
+          <div class="card-head" style="background:var(--energy)">
+            <span>Energy</span>
+            <div class="badge">Interfaces • Practical</div>
+          </div>
+          <div class="card-body">
+            <div style="margin-bottom:10px;">
+              Proportionate advisory focused on practical energy interfaces, buildings and operations:
+            </div>
+            <ul>
+              <li><span class="emph">Solar PV</span> integration, safety and fire interface</li>
+              <li><span class="emph">EV charging</span>: siting, loading and operational resilience</li>
+              <li><span class="emph">Battery storage</span> location, separation and emergency planning</li>
+              <li><span class="emph">Heat pumps</span>: safety integration and risk-aware advice</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="feature">
+    <div class="wrap">
+      <div class="feature-box">
+        <div>
+          <h2>Fire Door Inspections</h2>
+          <p>
+            Fire doors are life safety systems — not joinery items. FHASE provides structured inspection and reporting
+            aligned with an FDIS-style methodology, focusing on functional integrity, closing performance, gaps, seals,
+            signage and compartmentation interfaces.
+          </p>
+          <a class="mini-cta" href="mailto:info@fhase.uk?subject=Fire%20Door%20Inspection%20Enquiry">Book a Fire Door Review</a>
+        </div>
+        <div>
+          <ul class="feature-list">
+            <li>Condition and damage checks (leaf, frame, glazing where present)</li>
+            <li>Self-closing device performance and latching</li>
+            <li>Perimeter gaps, seals, thresholds and ironmongery condition</li>
+            <li>Compartmentation interface observations (walls/frames/service penetrations)</li>
+            <li>Clear, evidence-based reporting with prioritised actions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap split">
+    <div class="box">
+      <h3>Why engage FHASE</h3>
+      <ul>
+        <li>Independent advisory position — not “selling kit”</li>
+        <li>Proportionate controls without unnecessary layering</li>
+        <li>Evidence-led recommendations and practical actions</li>
+        <li>Clear reporting aligned to operational reality</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h3>Professional framework</h3>
+      <p>
+        FHASE operates within a structured professional framework — focusing on competence, evidence and proportionate
+        risk management. We support duty-holders with practical assurance across fire, health &amp; safety and building-energy interfaces.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <strong style="color:var(--ink)">FHASE</strong><br/>
+        Fire • Health &amp; Safety • Energy<br/>
+        <span>Competence-led • Evidence-based • Proportionate</span>
+      </div>
+      <div>
+        <div><strong style="color:var(--ink)">Contact</strong></div>
+        <div>Email: <a href="mailto:info@fhase.uk">info@fhase.uk</a></div>
+        <div>Coverage: Kent &amp; South East (UK)</div>
+        <div style="margin-top:8px;">
+          <a href="/privacy.html">Privacy</a> • <a href="/terms.html">Terms</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
