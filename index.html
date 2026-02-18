@@ -14,7 +14,7 @@
       --panel:#f8fafc;
       --line:#e2e8f0;
 
-      /* Brand purple (aligned to your logo direction) */
+      /* Brand purple (aligned to logo direction) */
       --brand:#7A1FA2;
 
       /* Pillar accents */
@@ -52,17 +52,17 @@
       align-items:center;
       justify-content:space-between;
       gap:16px;
-      padding:12px 0;
+      padding:10px 0; /* tightened */
     }
     .brand{
       display:flex;
       align-items:center;
       gap:12px;
-      min-width: 220px;
+      min-width: 240px;
       text-decoration:none;
     }
     .brand img{
-      height:46px;
+      height:58px; /* increased */
       width:auto;
       display:block;
     }
@@ -88,6 +88,7 @@
       flex-wrap:wrap;
       justify-content:flex-end;
     }
+    /* Standardised pill sizes */
     .nav-pill{
       font-size:13px;
       color:var(--muted);
@@ -95,6 +96,7 @@
       border-radius:999px;
       border:1px solid transparent;
       text-decoration:none;
+      line-height:1;
     }
     .nav-pill:hover{
       border-color:var(--line);
@@ -108,9 +110,10 @@
       padding:10px 14px;
       border-radius:999px;
       font-size:13px;
-      font-weight:650;
+      font-weight:700;
       text-decoration:none;
       box-shadow: 0 12px 22px rgba(122,31,162,.18);
+      line-height:1;
     }
     .cta:hover{filter:brightness(.96)}
 
@@ -134,6 +137,8 @@
       font-size:16px;
       max-width: 68ch;
     }
+
+    /* Standardised tag pills */
     .tagline{
       display:flex;
       gap:10px;
@@ -147,7 +152,10 @@
       border:1px solid var(--line);
       padding:8px 10px;
       border-radius:999px;
+      font-size:13px;
+      line-height:1;
     }
+
     .quick-card{
       background:linear-gradient(180deg, #ffffff, #f8fafc);
       border:1px solid var(--line);
@@ -169,7 +177,12 @@
       font-size:14px;
     }
     .quick-card li{margin:8px 0}
-    .emph{font-weight:700; color:var(--ink)}
+
+    /* Standardised emphasis across lists */
+    .key{
+      font-weight:700;
+      color:var(--ink);
+    }
 
     /* Service cards */
     .services{padding:10px 0 42px}
@@ -199,6 +212,8 @@
       letter-spacing:.01em;
     }
     .card-head span{font-size:18px}
+
+    /* Standardised badge size */
     .badge{
       font-size:12px;
       font-weight:700;
@@ -207,12 +222,15 @@
       background:rgba(255,255,255,.18);
       border:1px solid rgba(255,255,255,.22);
       white-space:nowrap;
+      line-height:1;
     }
+
     .card-body{
       padding:16px 18px 18px;
       color:var(--muted);
       font-size:14px;
       flex:1;
+      font-weight:400;
     }
     .card-body ul{margin:0; padding-left:18px}
     .card-body li{margin:10px 0}
@@ -256,15 +274,16 @@
       font-size:13px;
       font-weight:700;
       text-decoration:none;
+      line-height:1;
     }
     .mini-cta:hover{background:rgba(122,31,162,.06)}
 
-    /* Why engage + framework */
+    /* Lower panels */
     .split{
       display:grid;
       grid-template-columns: 1fr 1fr;
       gap:18px;
-      padding:26px 0 54px;
+      padding:26px 0 18px;
       border-top:1px solid var(--line);
     }
     .box{
@@ -282,6 +301,37 @@
     .box p{margin:0; color:var(--muted); font-size:14px}
     .box ul{margin:10px 0 0; padding-left:18px; color:var(--muted); font-size:14px}
     .box li{margin:8px 0}
+
+    /* Competence row */
+    .competence{
+      padding:0 0 54px;
+    }
+    .competence .box{padding:18px}
+    .comp-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+      margin-top:10px;
+    }
+    .comp-col{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius: 14px;
+      padding:14px;
+    }
+    .comp-col h4{
+      margin:0 0 8px;
+      font-size:13px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    .comp-col ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .comp-col li{margin:7px 0}
 
     /* Footer */
     footer{
@@ -303,8 +353,10 @@
       .cards{grid-template-columns: 1fr}
       .feature-box{grid-template-columns: 1fr}
       .split{grid-template-columns: 1fr}
+      .comp-grid{grid-template-columns: 1fr}
       h1{font-size:34px}
       .brand-name span{display:none}
+      .brand img{height:54px}
     }
   </style>
 </head>
@@ -357,10 +409,10 @@
         <aside class="quick-card">
           <h3>Core Support</h3>
           <ul>
-            <li>Fire risk assessments &amp; audits (proportionate scope)</li>
-            <li><span class="emph">Fire door inspections</span> (FDIS-aligned checks &amp; reporting)</li>
-            <li>Contractor governance &amp; RAMS reviews</li>
-            <li>Solar / EV / battery safety interface advisory</li>
+            <li><span class="key">Fire risk assessments</span> &amp; audits (proportionate scope)</li>
+            <li><span class="key">Fire door inspections</span> (FDIS-aligned checks &amp; reporting)</li>
+            <li><span class="key">Contractor governance</span> &amp; RAMS reviews</li>
+            <li><span class="key">Solar / EV / battery</span> safety interface advisory</li>
           </ul>
         </aside>
       </div>
@@ -378,11 +430,11 @@
           </div>
           <div class="card-body">
             <ul>
-              <li>Fire risk assessments and audits</li>
-              <li>Fire safety arrangements and controls review</li>
-              <li>Compartmentation and fire door condition advisory</li>
-              <li><span class="emph">Fire door inspections</span> (FDIS-aligned methodology)</li>
-              <li>Detection and warning system risk interface review</li>
+              <li><span class="key">Fire risk assessments</span> and audits</li>
+              <li><span class="key">Fire safety arrangements</span> and controls review</li>
+              <li><span class="key">Compartmentation</span> and fire door condition advisory</li>
+              <li><span class="key">Fire door inspections</span> (FDIS-aligned methodology)</li>
+              <li><span class="key">Detection and warning</span> system risk interface review</li>
             </ul>
           </div>
         </article>
@@ -394,11 +446,11 @@
           </div>
           <div class="card-body">
             <ul>
-              <li>Workplace and operational risk assessments</li>
-              <li>Policies, procedures and safe systems of work</li>
-              <li>Incident / near-miss frameworks and investigation support</li>
-              <li>Contractor governance and RAMS reviews</li>
-              <li>Audit preparation and proportionate compliance support</li>
+              <li><span class="key">Operational risk assessments</span> (workplace &amp; task)</li>
+              <li><span class="key">Policies and procedures</span> / safe systems of work</li>
+              <li><span class="key">Incident &amp; near-miss</span> frameworks and investigation support</li>
+              <li><span class="key">Contractor governance</span> and RAMS reviews</li>
+              <li><span class="key">Audit preparation</span> and proportionate compliance support</li>
             </ul>
           </div>
         </article>
@@ -413,10 +465,10 @@
               Proportionate advisory focused on practical energy interfaces, buildings and operations:
             </div>
             <ul>
-              <li><span class="emph">Solar PV</span> integration, safety and fire interface</li>
-              <li><span class="emph">EV charging</span>: siting, loading and operational resilience</li>
-              <li><span class="emph">Battery storage</span> location, separation and emergency planning</li>
-              <li><span class="emph">Heat pumps</span>: safety integration and risk-aware advice</li>
+              <li><span class="key">Solar PV</span> integration, safety and fire interface</li>
+              <li><span class="key">EV charging</span> siting, loading and operational resilience</li>
+              <li><span class="key">Battery storage</span> location, separation and emergency planning</li>
+              <li><span class="key">Heat pumps</span> safety integration and risk-aware advice</li>
             </ul>
           </div>
         </article>
@@ -439,11 +491,11 @@
         </div>
         <div>
           <ul class="feature-list">
-            <li>Condition and damage checks (leaf, frame, glazing where present)</li>
-            <li>Self-closing device performance and latching</li>
-            <li>Perimeter gaps, seals, thresholds and ironmongery condition</li>
-            <li>Compartmentation interface observations (walls/frames/service penetrations)</li>
-            <li>Clear, evidence-based reporting with prioritised actions</li>
+            <li><span class="key">Condition &amp; damage</span> checks (leaf, frame, glazing where present)</li>
+            <li><span class="key">Self-closer performance</span> and latching</li>
+            <li><span class="key">Perimeter gaps</span>, seals, thresholds and ironmongery condition</li>
+            <li><span class="key">Compartmentation interfaces</span> (walls/frames/service penetrations)</li>
+            <li><span class="key">Clear reporting</span> with prioritised actions</li>
           </ul>
         </div>
       </div>
@@ -470,6 +522,42 @@
     </div>
   </section>
 
+  <section class="wrap competence">
+    <div class="box">
+      <h3>Competence &amp; memberships</h3>
+      <p>Presented by pillar to reflect the professional routes and competence markers relevant to each service area.</p>
+
+      <div class="comp-grid">
+        <div class="comp-col">
+          <h4>Fire</h4>
+          <ul>
+            <li><span class="key">ProQual</span> Fire Risk Assessment (L3/L4 route)</li>
+            <li><span class="key">FDIS</span> Fire Door Inspection methodology</li>
+            <li><span class="key">FRA reporting</span> evidence-led, proportionate scope</li>
+          </ul>
+        </div>
+
+        <div class="comp-col">
+          <h4>Health &amp; Safety</h4>
+          <ul>
+            <li><span class="key">IOSH</span> (CMIOSH pathway)</li>
+            <li><span class="key">Operational H&amp;S</span> risk and governance focus</li>
+            <li><span class="key">Audit readiness</span> and practical compliance support</li>
+          </ul>
+        </div>
+
+        <div class="comp-col">
+          <h4>Energy</h4>
+          <ul>
+            <li><span class="key">EAL</span> electrical / building-energy pathway</li>
+            <li><span class="key">PV / EV</span> integration risk interface advisory</li>
+            <li><span class="key">Practical integration</span> (not installer-led sales)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer id="contact">
@@ -483,7 +571,7 @@
       <div>
         <div><strong style="color:var(--ink)">Contact</strong></div>
         <div>Email: <a href="mailto:info@fhase.uk">info@fhase.uk</a></div>
-        <div>Coverage: Kent &amp; South East (UK)</div>
+        <div>Coverage: South East (UK)</div>
         <div style="margin-top:8px;">
           <a href="/privacy.html">Privacy</a> • <a href="/terms.html">Terms</a>
         </div>
