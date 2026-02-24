@@ -2,580 +2,951 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>FHASE | Fire, Health, Safety & Energy</title>
-  <meta name="description" content="FHASE helps organisations stay compliant and energy-efficient without unnecessary controls, paperwork or operational disruption—focusing on proportionate risk management that protects people, buildings and day-to-day operations." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FHASE | Operationally Aware Risk Advisory</title>
+  <meta name="description" content="FHASE provides operationally aware fire and safety advisory services for commercial operations, accommodation facilities, industrial and infrastructure-aligned environments." />
+
+  <!-- Modern typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --ink:#0f172a;
-      --muted:#475569;
-      --bg:#ffffff;
-      --panel:#f8fafc;
-      --line:#e2e8f0;
-
-      /* Brand purple (aligned to logo direction) */
-      --brand:#7A1FA2;
-
-      /* Pillar accents */
-      --fire:#b23b3b;
-      --hs:#c07a2f;
-      --energy:#3e7b45;
-
-      --shadow: 0 10px 26px rgba(2,6,23,.08);
-      --radius: 18px;
-      --max: 1120px;
+      --bg:#0b0c10;
+      --panel:#0f1117;
+      --panel2:#121525;
+      --text:#e9ecf1;
+      --muted:rgba(233,236,241,.72);
+      --muted2:rgba(233,236,241,.55);
+      --line:rgba(233,236,241,.10);
+      --line2:rgba(11,12,16,.10);
+      --white:#ffffff;
+      --ink:#0e1016;
+      --soft:#f4f6fb;
+      --soft2:#eef1f7;
+      --accent:#7b2cbf;         /* FHASE purple */
+      --accent2:#a855f7;        /* glow */
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+      --shadowSoft: 0 18px 60px rgba(12,16,28,.10);
+      --radius: 16px;
+      --radius2: 22px;
+      --max: 1160px;
     }
 
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      color:var(--ink);
-      background:var(--bg);
-      line-height:1.55;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.55;
     }
-    a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
-
-    /* Header */
-    header{
-      position:sticky;
-      top:0;
-      background:rgba(255,255,255,.92);
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width: var(--max); margin:0 auto; padding: 0 22px}
+    .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 14px;
+      border:1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 13px;
+      background: rgba(255,255,255,.02);
       backdrop-filter: blur(10px);
-      border-bottom:1px solid var(--line);
-      z-index:50;
     }
-    .header-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-  padding:14px 0;
-}
+    .tagRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px}
+
+    /* NAV */
+    .nav{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(11,12,16,.70);
+      backdrop-filter: blur(14px);
+      border-bottom:1px solid rgba(233,236,241,.08);
+    }
+    .navInner{
+      display:flex; align-items:center; justify-content:space-between;
+      height: 78px;
+    }
     .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      min-width: 240px;
-      text-decoration:none;
+      display:flex; align-items:center; gap:12px;
     }
     .brand img{
-      height:86px; /* increased */
-      width:auto;
-      display:block;
+      width: 38px; height: 38px; object-fit:contain;
+      filter: drop-shadow(0 8px 18px rgba(168,85,247,.25));
     }
-    .brand-name{
-      display:flex;
-      flex-direction:column;
-      line-height:1.1;
+    .brand .name{
+      display:flex; flex-direction:column;
+      line-height: 1.1;
     }
-    .brand-name strong{
-      font-size:16px;
-      letter-spacing:.12em;
+    .brand .name strong{font-weight:800; letter-spacing:.4px}
+    .brand .name span{font-size:12px; color: var(--muted2)}
+    .navLinks{
+      display:flex; align-items:center; gap:18px;
+      color: var(--muted);
+      font-size: 14px;
     }
-    .brand-name span{
-      font-size:12px;
-      color:var(--muted);
-      letter-spacing:.02em;
+    .navLinks a{
+      padding: 10px 10px;
+      border-radius: 10px;
+      transition: background .2s ease, color .2s ease;
+    }
+    .navLinks a:hover{
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+    }
+    .ctaBtn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent) 0%, #5a189a 100%);
+      color: white;
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: 0 10px 28px rgba(123,44,191,.32);
+      transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+      white-space: nowrap;
+    }
+    .ctaBtn:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 0 22px rgba(168,85,247,.55), 0 14px 34px rgba(123,44,191,.30);
+      filter: brightness(1.03);
     }
 
-    nav{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
+    /* HERO */
+    .hero{
+      position: relative;
+      padding: 84px 0 64px;
+      overflow:hidden;
+      border-bottom: 1px solid rgba(233,236,241,.08);
     }
-    /* Standardised pill sizes */
-    .nav-pill{
-      font-size:13px;
-      color:var(--muted);
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid transparent;
-      text-decoration:none;
-      line-height:1;
+    .hero:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(800px 400px at 20% 10%, rgba(168,85,247,.22), transparent 55%),
+        radial-gradient(700px 360px at 80% 0%, rgba(123,44,191,.18), transparent 55%),
+        linear-gradient(135deg, #07080c 0%, #121426 55%, #0b0c10 100%);
+      z-index:0;
     }
-    .nav-pill:hover{
-      border-color:var(--line);
-      color:var(--ink);
-      background:#fff;
+    .hero:after{
+      content:"";
+      position:absolute; inset:0;
+      background-image:
+        linear-gradient(to right, rgba(233,236,241,.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(233,236,241,.06) 1px, transparent 1px);
+      background-size: 58px 58px;
+      opacity: .08;
+      z-index:0;
+      mask-image: radial-gradient(600px 420px at 30% 15%, rgba(0,0,0,1), rgba(0,0,0,.0));
     }
-    .cta{
-      margin-left:4px;
-      background:var(--brand);
-      color:#fff;
-      padding:10px 14px;
-      border-radius:999px;
-      font-size:13px;
-      font-weight:700;
-      text-decoration:none;
-      box-shadow: 0 12px 22px rgba(122,31,162,.18);
-      line-height:1;
-    }
-    .cta:hover{filter:brightness(.96)}
-
-    /* Hero */
-    .hero{padding:54px 0 22px}
-    .hero-grid{
+    .heroGrid{
+      position: relative;
+      z-index:1;
       display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap:20px;
-      align-items:start;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 34px;
+      align-items: start;
     }
-    h1{
-      margin:0 0 10px;
-      font-size:40px;
-      line-height:1.12;
-      letter-spacing:-.02em;
+    .hero h1{
+      margin:0;
+      font-size: clamp(34px, 4.4vw, 56px);
+      line-height: 1.04;
+      font-weight: 800;
+      letter-spacing: -.8px;
+    }
+    .hero h1 .accent{
+      color: var(--accent2);
+      text-shadow: 0 0 24px rgba(168,85,247,.18);
     }
     .hero p{
-      margin:0 0 14px;
-      color:var(--muted);
-      font-size:16px;
-      max-width: 68ch;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 58ch;
     }
-
-    /* Standardised tag pills */
-    .tagline{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:14px;
-      color:var(--muted);
-      font-size:13px;
+    .heroActions{
+      margin-top: 26px;
+      display:flex; gap:12px; align-items:center; flex-wrap:wrap;
     }
-    .tag{
-      background:var(--panel);
-      border:1px solid var(--line);
-      padding:8px 10px;
-      border-radius:999px;
-      font-size:13px;
-      line-height:1;
+    .ghostBtn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(233,236,241,.16);
+      color: var(--text);
+      background: rgba(255,255,255,.02);
+      transition: background .18s ease, transform .18s ease, border-color .18s ease;
+      white-space: nowrap;
     }
-
-    .quick-card{
-      background:linear-gradient(180deg, #ffffff, #f8fafc);
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      padding:18px;
-      box-shadow: var(--shadow);
+    .ghostBtn:hover{
+      background: rgba(255,255,255,.06);
+      transform: translateY(-1px);
+      border-color: rgba(233,236,241,.26);
     }
-    .quick-card h3{
+    .heroCard{
+      border-radius: var(--radius2);
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(233,236,241,.12);
+      box-shadow: 0 18px 60px rgba(0,0,0,.22);
+      padding: 22px;
+    }
+    .heroCard h3{
       margin:0 0 10px;
-      font-size:13px;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:var(--brand);
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(233,236,241,.70);
     }
-    .quick-card ul{
+    .heroCard ul{
+      margin:0; padding: 0 0 0 18px;
+      color: rgba(233,236,241,.80);
+      font-size: 14px;
+    }
+    .heroCard li{margin: 9px 0}
+
+    /* SECTIONS */
+    .section{
+      padding: 84px 0;
+      background: var(--white);
+      color: var(--ink);
+    }
+    .section.alt{
+      background: var(--soft);
+    }
+    .section.dark{
+      background: var(--bg);
+      color: var(--text);
+      border-top: 1px solid rgba(233,236,241,.08);
+      border-bottom: 1px solid rgba(233,236,241,.08);
+    }
+    .kicker{
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(14,16,22,.55);
+      margin:0 0 12px;
+    }
+    .dark .kicker{color: rgba(233,236,241,.60)}
+    .h2{
       margin:0;
-      padding-left:18px;
-      color:var(--muted);
-      font-size:14px;
+      font-size: clamp(26px, 3vw, 38px);
+      line-height: 1.1;
+      letter-spacing: -.6px;
+      font-weight: 800;
     }
-    .quick-card li{margin:8px 0}
-
-    /* Standardised emphasis across lists */
-    .key{
-      font-weight:700;
-      color:var(--ink);
+    .lead{
+      margin: 14px 0 0;
+      max-width: 75ch;
+      color: rgba(14,16,22,.72);
+      font-size: 16px;
     }
+    .dark .lead{color: var(--muted)}
 
-    /* Service cards */
-    .services{padding:10px 0 42px}
-    .cards{
+    .grid3{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
-      gap:18px;
+      gap: 18px;
+      margin-top: 34px;
     }
-    .card{
-      border:1px solid var(--line);
-      background:#fff;
+    .panel{
+      background: var(--white);
       border-radius: var(--radius);
-      overflow:hidden;
-      box-shadow: var(--shadow);
-      display:flex;
-      flex-direction:column;
-      min-height: 330px;
+      padding: 22px;
+      box-shadow: var(--shadowSoft);
+      border: 1px solid rgba(14,16,22,.08);
     }
-    .card-head{
-      padding:16px 18px;
-      min-height:72px;
+    .dark .panel{
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(233,236,241,.12);
+      box-shadow: 0 18px 60px rgba(0,0,0,.22);
+      color: var(--text);
+    }
+    .panel h4{
+      margin:0 0 8px;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -.2px;
+    }
+    .panel p{
+      margin:0;
+      color: rgba(14,16,22,.70);
+      font-size: 14px;
+    }
+    .dark .panel p{color: var(--muted)}
+    .panel .mini{
+      margin-top: 12px;
+      font-size: 12px;
+      color: rgba(14,16,22,.60);
+    }
+    .dark .panel .mini{color: rgba(233,236,241,.55)}
+    .iconLine{
+      height: 2px;
+      width: 46px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent2), transparent);
+      margin: 12px 0 14px;
+      opacity: .9;
+    }
+
+    /* PROBLEM BLOCK */
+    .problemBlock{
+      margin-top: 26px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items:start;
+    }
+    .stack{
+      padding: 22px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(233,236,241,.12);
+      background: rgba(255,255,255,.03);
+    }
+    .stack .bigLine{
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -.4px;
+      margin: 0 0 10px;
+    }
+    .stack .bigLine span{
+      color: var(--accent2);
+      text-shadow: 0 0 18px rgba(168,85,247,.18);
+    }
+    .stack ul{margin: 0; padding: 0 0 0 18px; color: var(--muted)}
+    .stack li{margin: 8px 0}
+
+    /* SELECTOR */
+    .selector{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 32px;
+    }
+    .selectCard{
+      border-radius: var(--radius2);
+      padding: 22px;
+      background: var(--white);
+      border: 1px solid rgba(14,16,22,.08);
+      box-shadow: var(--shadowSoft);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+      position: relative;
+      overflow:hidden;
+    }
+    .selectCard:before{
+      content:"";
+      position:absolute; inset:0;
+      background: radial-gradient(420px 220px at 20% 10%, rgba(168,85,247,.18), transparent 55%);
+      opacity: .7;
+      pointer-events:none;
+    }
+    .selectCard:hover{
+      transform: translateY(-2px);
+      border-color: rgba(123,44,191,.30);
+      box-shadow: 0 22px 70px rgba(12,16,28,.12);
+    }
+    .selectCard h4{
+      margin:0;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -.3px;
+      position:relative;
+    }
+    .selectCard p{
+      margin:10px 0 16px;
+      color: rgba(14,16,22,.72);
+      font-size: 14px;
+      position:relative;
+    }
+    .selectCard .link{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      color: var(--accent);
+      font-weight: 600;
+      position:relative;
+    }
+    .arrow{
+      width: 18px; height: 18px;
+      display:inline-block;
+      border-radius: 999px;
+      border: 1px solid rgba(123,44,191,.35);
+      display:flex; align-items:center; justify-content:center;
+      transform: translateX(0);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .selectCard:hover .arrow{
+      transform: translateX(2px);
+      box-shadow: 0 0 18px rgba(168,85,247,.30);
+    }
+
+    /* SERVICES */
+    .servicesGrid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 34px;
+    }
+    .serviceCard{
+      border-radius: var(--radius2);
+      padding: 24px;
+      background: var(--white);
+      border: 1px solid rgba(14,16,22,.08);
+      box-shadow: var(--shadowSoft);
+    }
+    .serviceCard h3{
+      margin:0;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -.3px;
+    }
+    .serviceCard .chip{
+      display:inline-flex;
+      margin-top: 10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(14,16,22,.10);
+      color: rgba(14,16,22,.70);
+      font-size: 12px;
+      background: rgba(14,16,22,.02);
+    }
+    .serviceCard ul{
+      margin: 16px 0 0;
+      padding: 0 0 0 18px;
+      color: rgba(14,16,22,.78);
+      font-size: 14px;
+    }
+    .serviceCard li{margin: 9px 0}
+    .serviceCard .note{
+      margin-top: 16px;
+      font-size: 13px;
+      color: rgba(14,16,22,.65);
+      border-top: 1px solid rgba(14,16,22,.08);
+      padding-top: 14px;
+    }
+
+    /* ENQUIRY */
+    .formWrap{
+      margin-top: 30px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    label{
+      display:block;
+      font-size: 12px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: rgba(14,16,22,.58);
+      margin: 0 0 8px;
+    }
+    input, select, textarea{
+      width:100%;
+      padding: 14px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(14,16,22,.12);
+      background: white;
+      font: inherit;
+      color: var(--ink);
+      outline: none;
+      transition: border-color .15s ease, box-shadow .15s ease;
+    }
+    textarea{min-height: 140px; resize: vertical}
+    input:focus, select:focus, textarea:focus{
+      border-color: rgba(123,44,191,.38);
+      box-shadow: 0 0 0 5px rgba(168,85,247,.12);
+    }
+    .full{grid-column: 1 / -1}
+    .submitRow{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:10px;
-      color:#fff;
-      font-weight:750;
-      letter-spacing:.01em;
+      gap: 14px;
+      margin-top: 16px;
+      flex-wrap: wrap;
     }
-    .card-head span{font-size:18px}
-
-    /* Standardised badge size */
-    .badge{
-      font-size:12px;
-      font-weight:700;
-      padding:6px 10px;
-      border-radius:999px;
-      background:rgba(255,255,255,.18);
-      border:1px solid rgba(255,255,255,.22);
-      white-space:nowrap;
-      line-height:1;
+    .smallPrint{
+      color: rgba(14,16,22,.62);
+      font-size: 13px;
+      max-width: 70ch;
     }
 
-    .card-body{
-      padding:16px 18px 18px;
-      color:var(--muted);
-      font-size:14px;
-      flex:1;
-      font-weight:400;
-    }
-    .card-body ul{margin:0; padding-left:18px}
-    .card-body li{margin:10px 0}
-
-    /* Fire doors highlight */
-    .feature{
-      padding:10px 0 52px;
-    }
-    .feature-box{
-      border:1px solid var(--line);
-      background:var(--panel);
-      border-radius: var(--radius);
-      padding:22px;
-      box-shadow: var(--shadow);
-      display:grid;
-      grid-template-columns: 1fr .9fr;
-      gap:16px;
-      align-items:start;
-    }
-    .feature-box h2{
-      margin:0 0 8px;
-      font-size:22px;
-      letter-spacing:-.01em;
-    }
-    .feature-box p{margin:0; color:var(--muted); font-size:14px}
-    .feature-list{
-      margin:0;
-      padding-left:18px;
-      color:var(--muted);
-      font-size:14px;
-    }
-    .feature-list li{margin:8px 0}
-    .mini-cta{
-      display:inline-block;
-      margin-top:14px;
-      background:#fff;
-      border:1px solid rgba(122,31,162,.25);
-      color:var(--brand);
-      padding:10px 14px;
-      border-radius:999px;
-      font-size:13px;
-      font-weight:700;
-      text-decoration:none;
-      line-height:1;
-    }
-    .mini-cta:hover{background:rgba(122,31,162,.06)}
-
-    /* Lower panels */
-    .split{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:18px;
-      padding:26px 0 18px;
-      border-top:1px solid var(--line);
-    }
-    .box{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      padding:18px;
-      box-shadow: var(--shadow);
-    }
-    .box h3{
-      margin:0 0 10px;
-      font-size:16px;
-      letter-spacing:-.01em;
-    }
-    .box p{margin:0; color:var(--muted); font-size:14px}
-    .box ul{margin:10px 0 0; padding-left:18px; color:var(--muted); font-size:14px}
-    .box li{margin:8px 0}
-
-    /* Competence row */
-    .competence{
-      padding:0 0 54px;
-    }
-    .competence .box{padding:18px}
-    .comp-grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:14px;
-      margin-top:10px;
-    }
-    .comp-col{
-      background:var(--panel);
-      border:1px solid var(--line);
-      border-radius: 14px;
-      padding:14px;
-    }
-    .comp-col h4{
-      margin:0 0 8px;
-      font-size:13px;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-    }
-    .comp-col ul{
-      margin:0;
-      padding-left:18px;
-      color:var(--muted);
-      font-size:14px;
-    }
-    .comp-col li{margin:7px 0}
-
-    /* Footer */
+    /* FOOTER */
     footer{
-      border-top:1px solid var(--line);
-      padding:26px 0 36px;
-      color:var(--muted);
-      font-size:13px;
+      background: #07080c;
+      color: rgba(233,236,241,.72);
+      padding: 40px 0;
+      border-top: 1px solid rgba(233,236,241,.08);
     }
-    .footer-grid{
+    .foot{
       display:grid;
       grid-template-columns: 1.2fr .8fr;
-      gap:18px;
+      gap: 18px;
+      align-items:start;
     }
-    .footer-grid a{ text-decoration:underline; text-underline-offset:3px; }
+    .foot a{color: rgba(233,236,241,.72)}
+    .foot a:hover{color: var(--text)}
+    .foot .mut{color: rgba(233,236,241,.55); font-size: 13px; margin-top: 10px}
 
-    /* Responsive */
-    @media (max-width: 920px){
-      .hero-grid{grid-template-columns: 1fr}
-      .cards{grid-template-columns: 1fr}
-      .feature-box{grid-template-columns: 1fr}
-      .split{grid-template-columns: 1fr}
-      .comp-grid{grid-template-columns: 1fr}
-      h1{font-size:34px}
-      .brand-name span{display:none}
-      .brand img{height:54px}
+    /* RESPONSIVE */
+    @media (max-width: 980px){
+      .heroGrid{grid-template-columns: 1fr}
+      .problemBlock{grid-template-columns: 1fr}
+      .grid3, .selector, .servicesGrid{grid-template-columns: 1fr}
+      .formWrap{grid-template-columns: 1fr}
+      .navLinks{display:none}
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <div class="wrap">
-    <div class="header-inner">
+  <!-- NAV -->
+  <div class="nav">
+    <div class="wrap navInner">
       <a class="brand" href="#top" aria-label="FHASE home">
-  <img src="assets/images/fhase-logo.png" alt="FHASE logo">
-</a>
+        <img src="assets/images/fhase-logo.png" alt="FHASE logo" />
+        <div class="name">
+          <strong>FHASE</strong>
+          <span>Fire • Health &amp; Safety • Energy</span>
+        </div>
+      </a>
 
-      <nav>
-        <a class="nav-pill" href="#fire">Fire</a>
-        <a class="nav-pill" href="#hs">Health &amp; Safety</a>
-        <a class="nav-pill" href="#energy">Energy</a>
-        <a class="nav-pill" href="#contact">Contact</a>
-        <a class="cta" href="mailto:info@fhase.uk?subject=FHASE%20Enquiry%20via%20fhase.uk">Request Consultation</a>
+      <nav class="navLinks" aria-label="Primary navigation">
+        <a href="#fire">Fire</a>
+        <a href="#hs">Health &amp; Safety</a>
+        <a href="#energy">Energy</a>
+        <a href="#contact">Contact</a>
       </nav>
+
+      <a class="ctaBtn" href="#enquiry">Request Consultation</a>
     </div>
   </div>
-</header>
 
-<main id="top">
+  <!-- HERO -->
+  <main id="top" class="hero">
+    <div class="wrap heroGrid">
+      <div>
+        <div class="pill">Operationally aware • Evidence-based • Proportionate</div>
 
-  <section class="hero">
-    <div class="wrap">
-      <div class="hero-grid">
-        <div>
-          <h1>Protecting people, premises and operations — <span style="color:var(--brand)">proportionately</span>.</h1>
-          <p>
-            FHASE helps organisations stay compliant and energy-efficient without unnecessary controls, paperwork
-            or operational disruption — focusing on proportionate risk management that protects people, buildings
-            and day-to-day operations.
-          </p>
+        <h1>
+          Operationally Aware <span class="accent">Risk Advisory</span>
+        </h1>
 
-          <div class="tagline">
-            <div class="tag">Competence-led</div>
-            <div class="tag">Evidence-based</div>
-            <div class="tag">Operationally realistic</div>
-            <div class="tag">Clear reporting</div>
-          </div>
+        <p>
+          FHASE provides structured fire and safety advisory services designed to protect people, premises and operational continuity
+          without unnecessary disruption.
+        </p>
+
+        <div class="heroActions">
+          <a class="ctaBtn" href="#enquiry">Discuss Your Environment</a>
+          <a class="ghostBtn" href="#selector">Explore Services</a>
         </div>
 
-        <aside class="quick-card">
-          <h3>Core Support</h3>
-          <ul>
-            <li><span class="key">Fire risk assessments</span> &amp; audits (proportionate scope)</li>
-            <li><span class="key">Fire door inspections</span> (FDIS-aligned checks &amp; reporting)</li>
-            <li><span class="key">Contractor governance</span> &amp; RAMS reviews</li>
-            <li><span class="key">Solar / EV / battery</span> safety interface advisory</li>
-          </ul>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <section class="services">
-    <div class="wrap">
-      <div class="cards">
-
-        <article class="card" id="fire">
-          <div class="card-head" style="background:var(--fire)">
-            <span>Fire</span>
-            <div class="badge">Risk • Controls • Assurance</div>
-          </div>
-          <div class="card-body">
-            <ul>
-              <li><span class="key">Fire risk assessments</span> and audits</li>
-              <li><span class="key">Fire safety arrangements</span> and controls review</li>
-              <li><span class="key">Compartmentation</span> and fire door condition advisory</li>
-              <li><span class="key">Fire door inspections</span> (FDIS-aligned methodology)</li>
-              <li><span class="key">Detection and warning</span> system risk interface review</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="card" id="hs">
-          <div class="card-head" style="background:var(--hs)">
-            <span>Health &amp; Safety</span>
-            <div class="badge">Systems • RAMS • Culture</div>
-          </div>
-          <div class="card-body">
-            <ul>
-              <li><span class="key">Operational risk assessments</span> (workplace &amp; task)</li>
-              <li><span class="key">Policies and procedures</span> / safe systems of work</li>
-              <li><span class="key">Incident &amp; near-miss</span> frameworks and investigation support</li>
-              <li><span class="key">Contractor governance</span> and RAMS reviews</li>
-              <li><span class="key">Audit preparation</span> and proportionate compliance support</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="card" id="energy">
-          <div class="card-head" style="background:var(--energy)">
-            <span>Energy</span>
-            <div class="badge">Interfaces • Practical</div>
-          </div>
-          <div class="card-body">
-            <div style="margin-bottom:10px;">
-              Proportionate advisory focused on practical energy interfaces, buildings and operations:
-            </div>
-            <ul>
-              <li><span class="key">Solar PV</span> integration, safety and fire interface</li>
-              <li><span class="key">EV charging</span> siting, loading and operational resilience</li>
-              <li><span class="key">Battery storage</span> location, separation and emergency planning</li>
-              <li><span class="key">Heat pumps</span> safety integration and risk-aware advice</li>
-            </ul>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="feature">
-    <div class="wrap">
-      <div class="feature-box">
-        <div>
-          <h2>Fire Door Inspections</h2>
-          <p>
-            Fire doors are life safety systems — not joinery items. FHASE provides structured inspection and reporting
-            aligned with an FDIS-style methodology, focusing on functional integrity, closing performance, gaps, seals,
-            signage and compartmentation interfaces.
-          </p>
-          <a class="mini-cta" href="mailto:info@fhase.uk?subject=Fire%20Door%20Inspection%20Enquiry">Book a Fire Door Review</a>
-        </div>
-        <div>
-          <ul class="feature-list">
-            <li><span class="key">Condition &amp; damage</span> checks (leaf, frame, glazing where present)</li>
-            <li><span class="key">Self-closer performance</span> and latching</li>
-            <li><span class="key">Perimeter gaps</span>, seals, thresholds and ironmongery condition</li>
-            <li><span class="key">Compartmentation interfaces</span> (walls/frames/service penetrations)</li>
-            <li><span class="key">Clear reporting</span> with prioritised actions</li>
-          </ul>
+        <div class="tagRow">
+          <span class="pill">Structured oversight</span>
+          <span class="pill">Consolidated reporting</span>
+          <span class="pill">Defined scope &amp; governance</span>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="wrap split">
-    <div class="box">
-      <h3>Why engage FHASE</h3>
-      <ul>
-        <li>Independent advisory position — not “selling kit”</li>
-        <li>Proportionate controls without unnecessary layering</li>
-        <li>Evidence-led recommendations and practical actions</li>
-        <li>Clear reporting aligned to operational reality</li>
-      </ul>
+      <aside class="heroCard" aria-label="Core support">
+        <h3>Core Support</h3>
+        <ul>
+          <li><strong>Fire risk</strong> assessment &amp; proportionate audits</li>
+          <li><strong>Fire door</strong> inspection &amp; action-focused reporting</li>
+          <li><strong>Contractor governance</strong> &amp; RAMS review</li>
+          <li><strong>Energy safety interfaces</strong> (PV / EV / battery risk)</li>
+        </ul>
+      </aside>
     </div>
+  </main>
 
-    <div class="box">
-      <h3>Professional framework</h3>
-      <p>
-        FHASE operates within a structured professional framework — focusing on competence, evidence and proportionate
-        risk management. We support duty-holders with practical assurance across fire, health &amp; safety and building-energy interfaces.
+  <!-- PROBLEM (DARK) -->
+  <section class="section dark">
+    <div class="wrap">
+      <p class="kicker">Position</p>
+      <h2 class="h2">Fragmented compliance creates friction.</h2>
+      <p class="lead">
+        Multiple consultants, overlapping site visits and inconsistent reporting introduce avoidable distraction. Operational environments require structured oversight.
       </p>
-    </div>
-  </section>
 
-  <section class="wrap competence">
-    <div class="box">
-      <h3>Competence &amp; memberships</h3>
-      <p>Presented by pillar to reflect the professional routes and competence markers relevant to each service area.</p>
-
-      <div class="comp-grid">
-        <div class="comp-col">
-          <h4>Fire</h4>
+      <div class="problemBlock">
+        <div class="stack">
+          <div class="bigLine">Multiple <span>consultants</span>.</div>
           <ul>
-            <li><span class="key">ProQual</span> Fire Risk Assessment (L3/L4 route)</li>
-            <li><span class="key">FDIS</span> Fire Door Inspection methodology</li>
-            <li><span class="key">FRA reporting</span> evidence-led, proportionate scope</li>
+            <li>Duplicated attendance</li>
+            <li>Repeated questioning</li>
+            <li>Split accountability</li>
           </ul>
         </div>
 
-        <div class="comp-col">
-          <h4>Health &amp; Safety</h4>
+        <div class="stack">
+          <div class="bigLine">Multiple <span>reports</span>.</div>
           <ul>
-            <li><span class="key">IOSH</span> (CMIOSH pathway)</li>
-            <li><span class="key">Operational H&amp;S</span> risk and governance focus</li>
-            <li><span class="key">Audit readiness</span> and practical compliance support</li>
-          </ul>
-        </div>
-
-        <div class="comp-col">
-          <h4>Energy</h4>
-          <ul>
-            <li><span class="key">EAL</span> electrical / building-energy pathway</li>
-            <li><span class="key">PV / EV</span> integration risk interface advisory</li>
-            <li><span class="key">Practical integration</span> (not installer-led sales)</li>
+            <li>Overlapping actions</li>
+            <li>Inconsistent priorities</li>
+            <li>Unclear governance</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-</main>
+  <!-- MODEL (LIGHT) -->
+  <section class="section" id="selector">
+    <div class="wrap">
+      <p class="kicker">Framework</p>
+      <h2 class="h2">One framework. Clear accountability.</h2>
+      <p class="lead">
+        FHASE structures engagements to reduce duplication, improve clarity and align recommendations to operational reality.
+      </p>
 
-<footer id="contact">
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <strong style="color:var(--ink)">FHASE</strong><br/>
-        Fire • Health &amp; Safety • Energy<br/>
-        <span>Competence-led • Evidence-based • Proportionate</span>
+      <div class="grid3">
+        <div class="panel">
+          <div class="iconLine"></div>
+          <h4>Integrated Attendance</h4>
+          <p>Fire and safety assessed in context — not in isolation.</p>
+          <div class="mini">Designed to minimise operational disruption.</div>
+        </div>
+
+        <div class="panel">
+          <div class="iconLine"></div>
+          <h4>Consolidated Reporting</h4>
+          <p>Single-action view with clear priorities and practical next steps.</p>
+          <div class="mini">Evidence-led, proportionate and structured.</div>
+        </div>
+
+        <div class="panel">
+          <div class="iconLine"></div>
+          <h4>Defined Scope &amp; Governance</h4>
+          <p>Clear remit, boundaries and accountability aligned to duty-holder needs.</p>
+          <div class="mini">Structured for scrutiny and continuity.</div>
+        </div>
       </div>
-      <div>
-        <div><strong style="color:var(--ink)">Contact</strong></div>
-        <div>Email: <a href="mailto:info@fhase.uk">info@fhase.uk</a></div>
-        <div>Coverage: South East (UK)</div>
-        <div style="margin-top:8px;">
-          <a href="/privacy.html">Privacy</a> • <a href="/terms.html">Terms</a>
+
+      <!-- Decision-led selector -->
+      <div class="selector" aria-label="Service selector">
+        <a class="selectCard" href="#fire">
+          <h4>Fire Risk &amp; Life Safety</h4>
+          <p>Structured assessment and reporting for environments where asset concentration and operational continuity matter.</p>
+          <span class="link">Explore <span class="arrow">→</span></span>
+        </a>
+
+        <a class="selectCard" href="#hs">
+          <h4>Health &amp; Safety Systems</h4>
+          <p>Governance-aligned systems, RAMS review and operational risk controls designed to work in practice.</p>
+          <span class="link">Explore <span class="arrow">→</span></span>
+        </a>
+
+        <a class="selectCard" href="#energy">
+          <h4>Energy Safety Interfaces</h4>
+          <p>Practical advisory around PV, EV and battery risk interfaces within operational environments.</p>
+          <span class="link">Explore <span class="arrow">→</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPERATIONAL CONTEXT (ALT LIGHT) -->
+  <section class="section alt">
+    <div class="wrap">
+      <p class="kicker">Operational context</p>
+      <h2 class="h2">Risk assessed within operational context.</h2>
+      <p class="lead">
+        Risk is assessed within the operational context of the site — including governance structures, infrastructure sensitivity, process flow and asset concentration.
+      </p>
+
+      <div class="grid3">
+        <div class="panel">
+          <h4>Operational Flow</h4>
+          <p>Recommendations aligned to how work is actually carried out across shifts and constrained environments.</p>
+        </div>
+        <div class="panel">
+          <h4>Infrastructure Sensitivity</h4>
+          <p>Interfaces and constraints considered proportionately to support continuity and resilience.</p>
+        </div>
+        <div class="panel">
+          <h4>Evidence &amp; Clarity</h4>
+          <p>Structured reporting designed to support prioritisation, governance and communication.</p>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </section>
+
+  <!-- SECTORS (DARK) -->
+  <section class="section dark">
+    <div class="wrap">
+      <p class="kicker">Environments</p>
+      <h2 class="h2">Built for flow-dependent environments.</h2>
+      <p class="lead">Structured for settings where disruption carries cost and documentation must withstand scrutiny.</p>
+
+      <div class="grid3">
+        <div class="panel">
+          <h4>Commercial Operations</h4>
+          <p>Operational settings requiring clear, proportionate oversight and practical next steps.</p>
+        </div>
+        <div class="panel">
+          <h4>Accommodation Facilities</h4>
+          <p>Risk controls and reporting aligned to life safety, governance and duty-holder needs.</p>
+        </div>
+        <div class="panel">
+          <h4>Industrial &amp; Infrastructure-Aligned</h4>
+          <p>Operational environments where continuity and structured assurance matter.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES (LIGHT) -->
+  <section class="section" id="services">
+    <div class="wrap">
+      <p class="kicker">Services</p>
+      <h2 class="h2">Clear scope. Proportionate delivery.</h2>
+      <p class="lead">
+        Service areas are presented as structured advisory pillars. Each engagement is scoped proportionately and aligned to recognised standards where applicable.
+      </p>
+
+      <div class="servicesGrid">
+        <div class="serviceCard" id="fire">
+          <h3>Fire Risk &amp; Life Safety</h3>
+          <div class="chip">Risk • Controls • Assurance</div>
+          <ul>
+            <li><strong>Fire risk assessments</strong> and proportionate audits</li>
+            <li><strong>Fire safety arrangements</strong> and controls review</li>
+            <li><strong>Compartmentation interfaces</strong> and fire door condition advisory</li>
+            <li><strong>Fire door inspections</strong> with action-focused reporting</li>
+            <li><strong>Detection &amp; warning</strong> system risk interface review</li>
+          </ul>
+          <div class="note">Structured reporting with prioritised actions designed for operational clarity.</div>
+        </div>
+
+        <div class="serviceCard" id="hs">
+          <h3>Health &amp; Safety Systems</h3>
+          <div class="chip">Systems • RAMS • Governance</div>
+          <ul>
+            <li><strong>Operational risk assessments</strong> (workplace &amp; task)</li>
+            <li><strong>Policies and procedures</strong> / safe systems of work</li>
+            <li><strong>Incident &amp; near-miss</strong> frameworks and investigation support</li>
+            <li><strong>Contractor governance</strong> and RAMS review</li>
+            <li><strong>Audit readiness</strong> and proportionate compliance support</li>
+          </ul>
+          <div class="note">Designed to support duty-holders with practical, evidence-led assurance.</div>
+        </div>
+
+        <div class="serviceCard" id="energy">
+          <h3>Energy Safety Interfaces</h3>
+          <div class="chip">Interfaces • Practical • Proportionate</div>
+          <ul>
+            <li><strong>Solar PV</strong> integration and safety / fire interface advisory</li>
+            <li><strong>EV charging</strong> siting, loading and operational considerations</li>
+            <li><strong>Battery risk</strong> location, separation and emergency planning</li>
+            <li><strong>Heat pumps</strong> safety integration and risk-aware advisory</li>
+          </ul>
+          <div class="note">Advisory focus — not installer-led sales. Practical interface management for operations.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDIBILITY (ALT) -->
+  <section class="section alt" id="contact">
+    <div class="wrap">
+      <p class="kicker">Professional position</p>
+      <h2 class="h2">Independent advisory. Structured delivery.</h2>
+      <p class="lead">
+        FHASE operates within a structured professional framework — focusing on competence, evidence and proportionate risk management.
+        Engagements are aligned to operational reality and duty-holder needs.
+      </p>
+
+      <div class="grid3">
+        <div class="panel">
+          <h4>Competence markers</h4>
+          <p>Fire, health &amp; safety and energy interface routes reflected proportionately to scope and role.</p>
+        </div>
+        <div class="panel">
+          <h4>Reporting discipline</h4>
+          <p>Clear actions, prioritisation and governance-aligned communication designed for operational use.</p>
+        </div>
+        <div class="panel">
+          <h4>Service area</h4>
+          <p>Core coverage across the South East (UK). Selected projects supported beyond the region where alignment justifies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENQUIRY (LIGHT) -->
+  <section class="section" id="enquiry">
+    <div class="wrap">
+      <p class="kicker">Enquiry</p>
+      <h2 class="h2">Discuss Your Environment</h2>
+      <p class="lead">Tell us about your operational setting and what you would like to achieve.</p>
+
+      <form id="fhaseEnquiryForm">
+        <div class="formWrap">
+          <div>
+            <label for="company">Company name</label>
+            <input id="company" name="company" required placeholder="Company / organisation" />
+          </div>
+
+          <div>
+            <label for="contactName">Contact name</label>
+            <input id="contactName" name="contactName" required placeholder="Full name" />
+          </div>
+
+          <div>
+            <label for="role">Position / role</label>
+            <input id="role" name="role" placeholder="Role / job title" />
+          </div>
+
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="name@company.com" />
+          </div>
+
+          <div>
+            <label for="phone">Telephone</label>
+            <input id="phone" name="phone" placeholder="Optional" />
+          </div>
+
+          <div>
+            <label for="activity">Primary activity</label>
+            <select id="activity" name="activity" required>
+              <option value="" selected disabled>Select…</option>
+              <option>Commercial operations</option>
+              <option>Accommodation facilities</option>
+              <option>Industrial</option>
+              <option>Infrastructure-aligned</option>
+              <option>Warehousing / distribution</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="full">
+            <label for="address">Site address</label>
+            <input id="address" name="address" required placeholder="Address line / town / postcode" />
+          </div>
+
+          <div>
+            <label for="size">Approx. floor area (m²)</label>
+            <input id="size" name="size" placeholder="e.g. 2500" />
+          </div>
+
+          <div>
+            <label for="employees">Number of employees</label>
+            <input id="employees" name="employees" placeholder="e.g. 40" />
+          </div>
+
+          <div>
+            <label for="working">Working pattern</label>
+            <select id="working" name="working">
+              <option value="" selected disabled>Select…</option>
+              <option>Standard hours</option>
+              <option>Multi-shift</option>
+              <option>24-hour operation</option>
+              <option>Other / mixed</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="focus">Primary focus</label>
+            <select id="focus" name="focus" required>
+              <option value="" selected disabled>Select…</option>
+              <option>Fire risk & life safety</option>
+              <option>Health & safety systems</option>
+              <option>Integrated operational review</option>
+              <option>Multi-site alignment</option>
+              <option>Energy safety interfaces</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="full">
+            <label for="message">Operational context / concerns</label>
+            <textarea id="message" name="message" placeholder="Briefly describe the environment, constraints and any specific concerns."></textarea>
+          </div>
+
+          <div class="full submitRow">
+            <button class="ctaBtn" type="submit">Submit Structured Enquiry</button>
+            <div class="smallPrint">
+              Structured information enables proportionate scoping and accurate fee proposals aligned to operational risk.
+              (No marketing lists — details are used only to respond to this enquiry.)
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap foot">
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <img src="assets/images/fhase-logo.png" alt="FHASE logo" style="width:34px;height:34px;object-fit:contain;opacity:.95;">
+          <div>
+            <div style="font-weight:800; letter-spacing:.4px;">FHASE</div>
+            <div class="mut">Fire • Health &amp; Safety • Energy</div>
+          </div>
+        </div>
+        <div class="mut">Competence-led • Evidence-based • Proportionate</div>
+      </div>
+
+      <div>
+        <div style="font-weight:700;color:rgba(233,236,241,.86);">Contact</div>
+        <div class="mut" style="margin-top:10px;">
+          Email: <a href="mailto:info@fhase.uk">info@fhase.uk</a><br>
+          Coverage: South East (UK)
+        </div>
+        <div class="mut" style="margin-top:12px;">
+          <a href="privacy.html">Privacy</a> • <a href="terms.html">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mailto-based structured enquiry (simple GitHub Pages compatible).
+    // Replace "info@fhase.uk" if needed.
+    (function(){
+      const form = document.getElementById('fhaseEnquiryForm');
+      if(!form) return;
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+
+        const data = new FormData(form);
+        const get = (k) => (data.get(k) || '').toString().trim();
+
+        const subject = `FHASE Enquiry | ${get('company')} | ${get('focus')}`;
+        const body =
+`Company: ${get('company')}
+Contact: ${get('contactName')}
+Role: ${get('role')}
+Email: ${get('email')}
+Telephone: ${get('phone')}
+
+Primary activity: ${get('activity')}
+Site address: ${get('address')}
+Approx. floor area (m²): ${get('size')}
+Employees: ${get('employees')}
+Working pattern: ${get('working')}
+
+Primary focus: ${get('focus')}
+
+Operational context / concerns:
+${get('message')}
+
+— Submitted via fhase.uk`;
+
+        const mailto = `mailto:info@fhase.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = mailto;
+      });
+    })();
+  </script>
 
 </body>
 </html>
