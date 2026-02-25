@@ -68,7 +68,7 @@
       min-width: 220px;
     }
     .brandMark{
-      width:96px;   /* bigger without distorting internal logo proportions */
+      width:96px;
       height:auto;
       display:block;
       border-radius:14px;
@@ -129,15 +129,20 @@
     }
 
     /* SECTIONS */
-   section{padding:56px 0;} /* tightened to reduce “blank space” feel */
+    section{padding:56px 0;}
+    .tightTop{padding-top:36px !important;}
+    .tightBottom{padding-bottom:36px !important;}
 
-/* Controlled spacing adjustment between specific sections */
-.tightTop{padding-top:36px !important;}
-.tightBottom{padding-bottom:36px !important;}
-
-.divider{
+    .divider{
       height:1px;
       background: linear-gradient(90deg, transparent, rgba(233,236,241,.10), transparent);
+    }
+    /* Thin FHASE-purple divider (for dark → light transitions) */
+    .dividerPurple{
+      height:2px;
+      background: linear-gradient(90deg, transparent, rgba(123,44,191,.88), rgba(168,85,247,.78), transparent);
+      box-shadow: 0 10px 40px rgba(123,44,191,.18);
+      opacity:.9;
     }
 
     /* HERO */
@@ -189,6 +194,7 @@
       font-size:44px;
       line-height:1.08;
       letter-spacing:-.5px;
+      max-width: 22ch;
     }
     .sub{
       margin:0 0 18px;
@@ -254,7 +260,7 @@
     .card ul{margin:0; padding-left:18px; color: rgba(233,236,241,.75); font-size:14px;}
     .card li{margin:6px 0;}
 
-    /* Structural hover lift for pillars + fire door */
+    /* Hover lift for pillars + fire door */
     .serviceCard,
     .fireDoorCard{
       transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
@@ -272,6 +278,7 @@
       align-items:center;
       justify-content:flex-start;
       margin-top:10px;
+      flex-wrap:wrap;
     }
     .textLink{
       display:inline-flex;
@@ -290,6 +297,14 @@
       background: rgba(233,236,241,.05);
       border-color: rgba(233,236,241,.18);
       transform: translateY(-1px);
+    }
+    .textLinkPrimary{
+      border-color: rgba(123,44,191,.30);
+      background: linear-gradient(135deg, rgba(123,44,191,.14), rgba(168,85,247,.10));
+    }
+    .textLinkPrimary:hover{
+      border-color: rgba(168,85,247,.36);
+      background: linear-gradient(135deg, rgba(123,44,191,.18), rgba(168,85,247,.12));
     }
 
     /* LIGHT SECTIONS */
@@ -356,8 +371,6 @@
       gap:12px;
       margin-top:12px;
     }
-
-    /* NEW: Address row (Address / Town / Postcode) */
     .formGrid3{
       display:grid;
       grid-template-columns: 2fr 1.2fr 1fr;
@@ -432,11 +445,11 @@
 
     /* RESPONSIVE */
     @media (max-width: 980px){
-      h1{font-size:36px;}
+      h1{font-size:36px; max-width:none;}
       .heroGrid{grid-template-columns:1fr;}
       .grid3{grid-template-columns:1fr;}
       .feature{grid-template-columns:1fr;}
-      .navLinks{display:none;} /* keep nav clean on mobile for now */
+      .navLinks{display:none;}
       .brandMark{width:86px;}
       .formGrid{grid-template-columns:1fr;}
       .formGrid3{grid-template-columns:1fr;}
@@ -457,11 +470,12 @@
           <a href="fire-door-inspections-kent.html">Fire Doors</a>
           <a href="health-and-safety-consultant-kent.html">Health &amp; Safety</a>
           <a href="energy-safety-interfaces.html">Energy</a>
-          <a href="#enquiry">Discuss Your Environment</a>
+          <a href="#enquiry">Enquiry</a>
         </nav>
 
         <div class="ctaRow">
-          <a class="btn" href="#enquiry">Discuss</a>
+          <!-- Request: one clear nav CTA + simple email option -->
+          <a class="btn" href="mailto:info@fhase.uk?subject=FHASE%20Enquiry">Email</a>
           <a class="btn btnPrimary" href="#enquiry">Request Consultation</a>
         </div>
       </div>
@@ -474,14 +488,19 @@
         <div class="heroGrid">
           <div>
             <div class="kicker">Operationally Aware • Structured Oversight • Clear Priorities</div>
-            <h1>Integrated facility risk oversight across Fire, Health &amp; Safety and Energy interfaces.</h1>
+
+            <!-- Change #2: Shorter, punchier headline -->
+            <h1>Integrated facility risk oversight—Fire, Health &amp; Safety and Energy interfaces.</h1>
+
             <p class="sub">
               FHASE consolidates separate inputs into one structured, operationally aware view of risk—aligned to continuity,
               efficiency and clear prioritisation for commercial and infrastructure-aligned environments across Kent and the South East (UK).
             </p>
+
             <div class="miniRow">
               <a class="btn btnPrimary" href="#services">Explore Services</a>
-              <a class="btn" href="#enquiry">Discuss Your Environment</a>
+              <a class="btn" href="#enquiry">Enquiry</a>
+              <a class="btn" href="mailto:info@fhase.uk?subject=FHASE%20Enquiry">Email</a>
             </div>
 
             <div class="heroPoints">
@@ -557,9 +576,11 @@
             <p style="margin-top:12px;">
               Reporting is prioritised and aligned to duty-holder risk—supporting efficient action planning without unnecessary disruption.
             </p>
+
+            <!-- Change #3: One primary action -->
             <div class="linkRow">
+              <a class="textLink textLinkPrimary" href="#enquiry">Book a structured review →</a>
               <a class="textLink" href="fire-door-inspections-kent.html">View Fire Door Inspections →</a>
-              <a class="textLink" href="#enquiry">Book a structured review →</a>
             </div>
           </div>
 
@@ -576,7 +597,8 @@
       </div>
     </section>
 
-    <div class="divider"></div>
+    <!-- Change #4: Thin purple divider at the dark → light transition -->
+    <div class="dividerPurple"></div>
 
     <section id="services" class="light">
       <div class="container">
@@ -614,7 +636,6 @@
       </div>
     </section>
 
-    <!-- MOVED + REWRITTEN: “AVOID” section now comes AFTER Services so it cannot be misread as “what FHASE offers” -->
     <div class="divider"></div>
 
     <section id="avoid">
@@ -624,6 +645,11 @@
         <p class="lead">
           Where fire, health &amp; safety and energy risks are handled separately, organisations often inherit duplicated attendance,
           inconsistent priorities and unclear accountability. FHASE removes this by consolidating oversight into one structured framework.
+        </p>
+
+        <!-- Change #5: One-line outcome statement -->
+        <p class="lead" style="margin-top:-6px;">
+          <strong>Outcome:</strong> fewer site visits, one prioritised action list, and clearer accountability.
         </p>
 
         <div class="grid3">
@@ -659,14 +685,13 @@
 
     <section id="enquiry">
       <div class="container">
-        <div class="label">Discuss your environment</div>
+        <div class="label">Enquiry</div>
         <h2>Tell FHASE about the operational setting and what should be achieved</h2>
         <p class="lead">
           Start with a brief outline. A structured intake can then be completed where appropriate—supporting accurate scoping and reduced disruption.
         </p>
 
         <div class="enquiryWrap">
-          <!-- Stage 1: Low-friction -->
           <form id="quickForm">
             <div class="formGrid">
               <div>
@@ -695,10 +720,11 @@
             <div class="formActions">
               <button type="button" class="btn btnPrimary" id="btnReveal">Begin structured enquiry</button>
               <button type="button" class="btn" id="btnDownloadCsv">Download Xero-ready CSV (contact)</button>
+              <a class="btn" href="mailto:info@fhase.uk?subject=FHASE%20Enquiry%20-%20Quick%20Email">Just email me</a>
               <span class="hint" id="refHint"></span>
             </div>
+          </form>
 
-          <!-- Stage 2: Structured intake (revealed on demand) -->
           <form id="fullForm" class="hidden" style="margin-top:18px;">
             <div class="divider" style="margin:14px 0;"></div>
             <div class="label">Structured intake</div>
@@ -723,7 +749,6 @@
               </div>
             </div>
 
-            <!-- NEW: 3-box site location row -->
             <div class="formGrid3">
               <div>
                 <label for="f_address">Site address</label>
@@ -774,7 +799,7 @@
             <div class="formActions">
               <button type="button" class="btn btnPrimary" id="btnCopySummary">Copy structured summary</button>
               <button type="button" class="btn" id="btnHide">Hide structured intake</button>
-              <span class="hint">Copying creates a clean scope note for email/CRM. A submission endpoint can be added later without redesign.</span>
+              <!-- Change #6: remove the internal helper sentence (cleaner) -->
             </div>
           </form>
         </div>
@@ -810,7 +835,8 @@
           <div style="display:flex; gap:14px; flex-wrap:wrap;">
             <a href="privacy.html">Privacy</a>
             <a href="terms.html">Terms</a>
-            <a href="#enquiry">Discuss Your Environment</a>
+            <a href="#enquiry">Enquiry</a>
+            <a href="mailto:info@fhase.uk?subject=FHASE%20Enquiry">Email</a>
           </div>
         </div>
       </div>
