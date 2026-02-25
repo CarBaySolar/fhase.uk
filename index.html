@@ -29,7 +29,26 @@
       --max:1160px;
       --radius:18px;
     }
+.brandText{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  line-height:1.05;
+}
 
+.brandTag{
+  font-size:14px;
+  color: rgba(233,236,241,.75);
+  letter-spacing:.3px;
+  white-space:nowrap;
+}
+
+@media (max-width:980px){
+  .brandTag{display:none;}
+}
+
+This keeps the top bar clean on mobile.
+    
     *{box-sizing:border-box;}
     html,body{height:100%;}
     body{
