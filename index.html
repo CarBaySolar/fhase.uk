@@ -669,17 +669,22 @@
               </div>
               <div>
                 <label for="f_postcode">Postcode</label>
-                <input id="f_postcode" name="postcode" placeholder="e.g., CT9 1XX" />
-              </div>
-              <div>
-                <label for="f_address">Site address</label>
-                <input id="f_address" name="address" placeholder="Address line (site)" />
-              </div>
-              <div>
-                <label for="f_city">Town / City</label>
-                <input id="f_city" name="city" placeholder="Town / City" />
-              </div>
-              <div>
+                <div class="formGrid3">
+  <div>
+    <label for="site_address">Site address</label>
+    <input id="site_address" name="site_address" placeholder="Address line" />
+  </div>
+
+  <div>
+    <label for="site_town">Town</label>
+    <input id="site_town" name="site_town" placeholder="Town" />
+  </div>
+
+  <div>
+    <label for="site_postcode">Postcode</label>
+    <input id="site_postcode" name="site_postcode" placeholder="Postcode" />
+  </div>
+</div>
                 <label for="f_env">Environment type</label>
                 <select id="f_env" name="environment">
                   <option value="">Select…</option>
