@@ -30,6 +30,19 @@
       --radius:18px;
     }
 
+    /* Address 3-column layout */
+.formGrid3{
+  display:grid;
+  grid-template-columns: 2fr 1.2fr 1fr;
+  gap:12px;
+}
+
+@media (max-width: 980px){
+  .formGrid3{ grid-template-columns: 1fr; }
+}
+
+*{box-sizing:border-box;}
+html,body{height:100%;}
     *{box-sizing:border-box;}
     html,body{height:100%;}
     body{
