@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="FHASE provides operationally aware risk advisory across Fire, Health & Safety and Energy interfaces — structured, evidence-led and proportionate." />
-  <title>FHASE — Fire | Health & Safety | Energy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="FHASE provides integrated, operationally aware risk advisory across Fire, Health & Safety and Energy interfaces—structured, evidence-based and proportionate delivery across Kent and the South East (UK)." />
+  <title>FHASE - Fire | Health &amp; Safety | Energy</title>
 
   <style>
     :root{
-      --bg:#07080c;
+      --bg:#0b0c10;
       --panel:#10131f;
       --panel2:#0f1322;
       --text:#e9ecf1;
@@ -16,92 +16,94 @@
       --muted2:rgba(233,236,241,.58);
       --line:rgba(233,236,241,.10);
       --line2:rgba(233,236,241,.08);
+      --white:#ffffff;
       --ink:#0e1016;
       --soft:#f4f6fb;
       --soft2:#eef1f7;
-
-      --purple:#7b2cbf;  /* FHASE purple */
+      --purple:#7b2cbf;      /* FHASE purple */
       --purple2:#a855f7;
-
-      --shadow: 0 18px 60px rgba(0,0,0,.35);
-      --shadowSoft: 0 18px 60px rgba(12,16,28,.18);
-
+      --glow:rgba(123,44,191,.45);
+      --shadow:0 18px 60px rgba(0,0,0,.35);
+      --shadowSoft:0 18px 60px rgba(12,16,28,.18);
       --radius:18px;
       --radius2:22px;
       --max:1160px;
+      --navH:86px;
     }
 
-    *{box-sizing:border-box;}
-    html,body{height:100%;}
+    *{box-sizing:border-box}
+    html,body{height:100%}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
       color:var(--text);
       background:
-        radial-gradient(1200px 900px at 20% 10%, rgba(123,44,191,.35), transparent 55%),
-        radial-gradient(1000px 700px at 90% 20%, rgba(168,85,247,.18), transparent 55%),
-        radial-gradient(900px 700px at 10% 95%, rgba(123,44,191,.16), transparent 60%),
-        linear-gradient(180deg, #05060a 0%, #07080c 40%, #05060a 100%);
+        radial-gradient(1200px 900px at 18% 10%, rgba(123,44,191,.30), transparent 55%),
+        radial-gradient(1000px 700px at 90% 20%, rgba(168,85,247,.16), transparent 55%),
+        var(--bg);
+      line-height:1.45;
     }
 
-    a{color:inherit; text-decoration:none;}
-    img{max-width:100%;}
-
-    .container{max-width:var(--max); margin:0 auto; padding:0 24px;}
-    .srOnly{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max); margin:0 auto; padding:0 22px;}
+    .wrap{max-width:var(--max); margin:0 auto;}
+    .srOnly{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;}
 
     /* NAV */
     header.nav{
-      position: sticky; /* keeps nav visible */
-      top: 0;
-      z-index: 9999;
-      background: rgba(7,8,12,.92);
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(11,12,16,.72);
       backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--line);
+      border-bottom:1px solid var(--line2);
     }
     .navInner{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:16px;
-      padding:14px 0;
+      gap:18px;
+      padding:12px 0;
+      min-height:var(--navH);
     }
-
     .brand{
       display:flex;
       align-items:center;
       gap:14px;
-      min-width: 280px;
+      min-width:260px;
     }
     .brandMark{
-      width:118px; /* bigger so it reads */
+      width:110px;
       height:auto;
       display:block;
-      border-radius:14px;
-      background: rgba(255,255,255,.96);
-      padding:6px;
-      border: 1px solid rgba(255,255,255,.18);
-      box-shadow: 0 14px 34px rgba(0,0,0,.35);
+      border-radius:16px;
+      background:rgba(255,255,255,.96);
+      padding:8px;
+      border:1px solid rgba(255,255,255,.18);
+      box-shadow:0 14px 34px rgba(0,0,0,.35);
     }
     .brandText{
       display:flex;
       flex-direction:column;
-      justify-content:center;
+      gap:2px;
       line-height:1.05;
     }
+    .brandText strong{
+      letter-spacing:.10em;
+      font-size:15px;
+    }
     .brandTag{
-      font-size:14px;
-      color: rgba(233,236,241,.82);
-      letter-spacing:.3px;
+      font-size:13px;
+      color:rgba(233,236,241,.86);
       white-space:nowrap;
     }
 
-    nav.navLinks{
+    .navLinks{
       display:flex;
-      gap:18px;
       align-items:center;
-      flex-wrap:wrap;
+      gap:10px;
       justify-content:center;
+      flex-wrap:wrap;
       color:var(--muted);
       font-size:14px;
     }
@@ -109,14 +111,13 @@
       padding:10px 10px;
       border-radius:12px;
       border:1px solid transparent;
-      transition: background .18s ease, border-color .18s ease, color .18s ease, transform .18s ease;
+      transition: background .18s ease, border-color .18s ease, color .18s ease;
       white-space:nowrap;
     }
     .navLinks a:hover{
-      background: rgba(233,236,241,.06);
-      border-color: rgba(233,236,241,.12);
-      color: rgba(233,236,241,.92);
-      transform: translateY(-1px);
+      background:rgba(255,255,255,.06);
+      border-color:rgba(255,255,255,.10);
+      color:var(--text);
     }
 
     .ctaRow{
@@ -124,207 +125,150 @@
       align-items:center;
       gap:10px;
       justify-content:flex-end;
-      min-width: 240px;
+      flex-wrap:wrap;
+      min-width:260px;
     }
-
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
       gap:10px;
-      padding:10px 14px;
+      padding:12px 16px;
       border-radius:999px;
-      border:1px solid rgba(233,236,241,.14);
-      background: rgba(233,236,241,.04);
-      color: rgba(233,236,241,.92);
-      font-size:14px;
-      line-height:1;
-      transition: transform .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
       cursor:pointer;
-      user-select:none;
+      transition: transform .14s ease, box-shadow .14s ease, background .14s ease, border-color .14s ease;
+      font-weight:600;
+      font-size:13px;
       white-space:nowrap;
     }
     .btn:hover{
       transform: translateY(-1px);
-      background: rgba(233,236,241,.07);
-      border-color: rgba(233,236,241,.20);
+      background:rgba(255,255,255,.09);
+      border-color:rgba(255,255,255,.18);
+      box-shadow:0 14px 26px rgba(0,0,0,.25);
     }
     .btnPrimary{
-      border: none;
-      background: linear-gradient(135deg, var(--purple) 0%, var(--purple2) 100%);
-      box-shadow: 0 12px 36px rgba(123,44,191,.35);
+      background: linear-gradient(135deg, rgba(123,44,191,.95), rgba(168,85,247,.92));
+      border-color: rgba(168,85,247,.35);
+      box-shadow: 0 18px 42px rgba(123,44,191,.26);
     }
-    .btnPrimary:hover{ box-shadow: 0 14px 44px rgba(123,44,191,.42); }
-
-    @media (max-width: 980px){
-      .navInner{flex-wrap:wrap; justify-content:center;}
-      .brand{min-width:auto;}
-      .brandTag{display:none;} /* cleaner on mobile */
-      .ctaRow{width:100%; justify-content:center;}
+    .btnPrimary:hover{
+      box-shadow: 0 22px 55px rgba(123,44,191,.32);
+    }
+    .btnGhost{
+      background:transparent;
+      border-color:rgba(255,255,255,.14);
     }
 
-    /* SECTIONS / SPACING */
+    /* SECTIONS */
     section{padding:56px 0;}
     .tightTop{padding-top:36px !important;}
     .tightBottom{padding-bottom:36px !important;}
 
-    .divider{
-      height:1px;
-      background: linear-gradient(90deg, transparent, rgba(233,236,241,.10), transparent);
-    }
+    /* dividers */
+    .divider{height:1px; background:linear-gradient(90deg, transparent, rgba(233,236,241,.10), transparent);}
     .dividerPurple{
-      height:2px;
-      background: linear-gradient(90deg,
-        transparent,
-        rgba(123,44,191,.0),
-        rgba(123,44,191,.85),
-        rgba(168,85,247,.65),
-        rgba(123,44,191,.0),
-        transparent
-      );
-      opacity:.95;
+      height:3px;
+      background:linear-gradient(90deg, transparent, rgba(123,44,191,.0), rgba(123,44,191,.95), rgba(168,85,247,.85), rgba(123,44,191,.0), transparent);
+      opacity:.85;
     }
 
     /* HERO */
     .hero{
       position:relative;
       overflow:hidden;
-      padding:72px 0 54px;
+      padding:72px 0 46px;
     }
     .hero::before{
       content:"";
       position:absolute;
-      inset:-40px;
+      inset:-2px;
       background:
-        radial-gradient(900px 520px at 20% 30%, rgba(123,44,191,.35), transparent 60%),
-        radial-gradient(900px 520px at 80% 20%, rgba(168,85,247,.20), transparent 62%),
-        linear-gradient(180deg, rgba(12,14,20,.0) 0%, rgba(12,14,20,.25) 100%);
+        radial-gradient(900px 520px at 18% 30%, rgba(123,44,191,.38), transparent 60%),
+        radial-gradient(720px 500px at 72% 20%, rgba(168,85,247,.22), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.02), transparent 40%);
       pointer-events:none;
     }
     .heroGrid{
+      position:relative;
       display:grid;
-      grid-template-columns: 1.15fr .85fr;
+      grid-template-columns: 1.2fr .8fr;
       gap:26px;
       align-items:start;
-      position:relative;
-    }
-    .kicker{
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
-      padding:8px 12px;
-      border:1px solid rgba(233,236,241,.14);
-      background: rgba(233,236,241,.04);
-      border-radius:999px;
-      color: rgba(233,236,241,.80);
-      font-size:13px;
-      letter-spacing:.2px;
-      margin-bottom:14px;
-    }
-    h1{
-      font-size:46px;
-      line-height:1.03;
-      margin:0 0 14px 0;
-      letter-spacing:-.6px;
-    }
-    .gradWord{
-      background: linear-gradient(135deg, var(--purple2), var(--purple));
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:transparent;
-    }
-    .lead{
-      color: rgba(233,236,241,.78);
-      font-size:16px;
-      line-height:1.6;
-      margin:0 0 22px 0;
-      max-width: 62ch;
     }
     .pillRow{
       display:flex;
-      gap:10px;
       flex-wrap:wrap;
-      margin-top:16px;
+      gap:10px;
+      margin:10px 0 18px;
     }
     .pill{
-      padding:10px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(233,236,241,.12);
-      background: rgba(233,236,241,.03);
-      color: rgba(233,236,241,.78);
-      font-size:13px;
-      line-height:1.1;
-      min-width: 240px;
-      transition: transform .18s ease, border-color .18s ease, background .18s ease;
-    }
-    .pill:hover{
-      transform: translateY(-2px);
-      border-color: rgba(168,85,247,.35);
-      background: rgba(233,236,241,.05);
-    }
-
-    .asideCard{
-      border-radius: var(--radius2);
-      border: 1px solid rgba(233,236,241,.10);
-      background: rgba(15,19,34,.55);
-      box-shadow: var(--shadow);
-      padding:18px 18px 16px;
-    }
-    .asideTitle{
-      font-weight:800;
-      letter-spacing:.3px;
-      font-size:13px;
-      color: rgba(233,236,241,.85);
-      margin:0 0 10px;
-    }
-    .asideText{
-      margin:0 0 10px;
-      color: rgba(233,236,241,.70);
-      font-size:13px;
-      line-height:1.55;
-    }
-    .badgeRow{display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 12px;}
-    .badge{
       display:inline-flex;
       align-items:center;
-      padding:7px 10px;
+      gap:8px;
+      padding:8px 12px;
       border-radius:999px;
-      border:1px solid rgba(233,236,241,.12);
-      background: rgba(233,236,241,.03);
-      font-size:12px;
-      color: rgba(233,236,241,.80);
-      transition: transform .18s ease, border-color .18s ease;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      color:rgba(233,236,241,.86);
+      font-size:13px;
+      white-space:nowrap;
     }
-    .badge:hover{transform: translateY(-1px); border-color: rgba(168,85,247,.35);}
-    .asideMeta{
-      margin-top:10px;
-      padding-top:10px;
-      border-top:1px solid rgba(233,236,241,.10);
-      color: rgba(233,236,241,.72);
-      font-size:12px;
-      line-height:1.5;
+    h1{
+      margin:0 0 10px;
+      font-size:44px;
+      letter-spacing:-.02em;
+      line-height:1.05;
     }
+    .accent{color:var(--purple2)}
+    .lead{
+      margin:0;
+      color:var(--muted);
+      font-size:15px;
+      max-width:60ch;
+    }
+    .heroCtas{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin:22px 0 16px;
+    }
+    .chips{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      margin-top:12px;
+      max-width:660px;
+    }
+    .chip{
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.05);
+      color:rgba(233,236,241,.86);
+      font-size:13px;
+    }
+    .panel{
+      border-radius:var(--radius2);
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(16,19,31,.62);
+      box-shadow: var(--shadow);
+      padding:18px 18px;
+    }
+    .panel h3{
+      margin:0 0 10px;
+      font-size:13px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:rgba(233,236,241,.78);
+    }
+    .panel ul{margin:0; padding-left:18px; color:rgba(233,236,241,.86)}
+    .panel li{margin:8px 0; font-size:13.5px;}
 
-    @media (max-width: 980px){
-      .heroGrid{grid-template-columns:1fr;}
-      h1{font-size:38px;}
-      .pill{min-width:unset; width:100%;}
-    }
-
-    /* Headings / grids */
-    .label{
-      letter-spacing: .22em;
-      font-size: 11px;
-      color: rgba(233,236,241,.55);
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-    h2{
-      font-size:34px;
-      line-height:1.1;
-      margin:0 0 12px;
-      letter-spacing:-.4px;
-    }
+    /* cards + hover pop */
     .grid3{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
@@ -332,255 +276,344 @@
       margin-top:18px;
     }
     .card{
-      border-radius: var(--radius2);
-      border:1px solid rgba(233,236,241,.10);
-      background: rgba(15,19,34,.52);
-      box-shadow: var(--shadow);
-      padding:16px;
-      transition: transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease;
+      border-radius:var(--radius2);
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.04);
+      padding:16px 16px;
+      box-shadow: 0 18px 60px rgba(0,0,0,.20);
+      transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease, background .16s ease;
     }
     .card:hover{
-      transform: translateY(-3px);
-      border-color: rgba(168,85,247,.30);
-      background: rgba(15,19,34,.62);
-      box-shadow: 0 22px 70px rgba(0,0,0,.42);
+      transform: translateY(-4px);
+      border-color:rgba(168,85,247,.28);
+      background:rgba(255,255,255,.055);
+      box-shadow: 0 22px 70px rgba(0,0,0,.26);
     }
-    .card h3{margin:0 0 8px; font-size:15px;}
-    .card p{margin:0; color: rgba(233,236,241,.72); font-size:13px; line-height:1.55;}
-
-    @media (max-width: 980px){
-      .grid3{grid-template-columns:1fr;}
+    .label{
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-size:12px;
+      color:rgba(233,236,241,.68);
+      margin-bottom:10px;
+    }
+    h2{
+      margin:0 0 10px;
+      font-size:34px;
+      letter-spacing:-.02em;
+      line-height:1.08;
     }
 
-    /* Light section */
+    /* Light sections */
     .light{
       background:
-        radial-gradient(800px 400px at 10% 10%, rgba(123,44,191,.10), transparent 60%),
-        linear-gradient(180deg, var(--soft) 0%, var(--soft2) 100%);
-      color: var(--ink);
+        radial-gradient(1200px 800px at 18% 10%, rgba(123,44,191,.06), transparent 55%),
+        radial-gradient(1000px 650px at 90% 10%, rgba(168,85,247,.05), transparent 55%),
+        linear-gradient(180deg, var(--soft), var(--soft2));
+      color:#0e1016;
     }
-    .light .label{color: rgba(14,16,22,.55);}
-    .light h2{color: #0b0d12;}
-    .light .lead{color: rgba(14,16,22,.72);}
+    .light .label{color:rgba(14,16,22,.55)}
+    .light .lead{color:rgba(14,16,22,.72)}
     .light .card{
-      background: rgba(255,255,255,.92);
-      border: 1px solid rgba(14,16,22,.10);
+      background:rgba(255,255,255,.92);
+      border-color:rgba(14,16,22,.10);
       box-shadow: var(--shadowSoft);
     }
     .light .card:hover{
-      border-color: rgba(123,44,191,.20);
-      box-shadow: 0 22px 70px rgba(12,16,28,.16);
+      border-color:rgba(123,44,191,.25);
+      box-shadow: 0 22px 60px rgba(12,16,28,.18);
     }
-    .light .card p{color: rgba(14,16,22,.70);}
 
+    /* Fire Doors feature */
+    .feature{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:16px;
+      margin-top:18px;
+    }
+    .badgeRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:12px 0 0;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
+      font-size:12.5px;
+      color:rgba(233,236,241,.86);
+    }
     .textLink{
       display:inline-flex;
       align-items:center;
-      gap:10px;
+      gap:8px;
+      margin-top:12px;
       font-weight:700;
-      color: rgba(123,44,191,.95);
-      margin-top:10px;
-      font-size:13px;
+      color:rgba(233,236,241,.92);
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.05);
+      transition: transform .14s ease, background .14s ease, border-color .14s ease;
     }
-    .textLink:hover{opacity:.9; transform: translateY(-1px);}
+    .textLink:hover{
+      transform: translateY(-2px);
+      background:rgba(255,255,255,.08);
+      border-color:rgba(168,85,247,.28);
+    }
 
-    /* Fire door feature */
-    .feature{
-      margin-top:16px;
+    /* Services cards (light) */
+    .serviceCards{
       display:grid;
-      grid-template-columns: 1.1fr .9fr;
+      grid-template-columns: repeat(3, 1fr);
       gap:16px;
-      align-items:stretch;
+      margin-top:18px;
     }
-    .feature .card{height:100%;}
-    .badgeRowWide{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;}
-    @media (max-width:980px){
-      .feature{grid-template-columns:1fr;}
+    .serviceCards .card h3{margin:0 0 8px; font-size:16px;}
+    .serviceCards .card p{margin:0 0 10px; color:rgba(14,16,22,.72); font-size:13.5px;}
+    .serviceCards .card a{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-weight:800;
+      color:#0e1016;
+      border:1px solid rgba(14,16,22,.12);
+      padding:10px 12px;
+      border-radius:12px;
+      background:rgba(255,255,255,.92);
     }
 
-    /* Avoid section lists */
-    .avoidCardTitle{font-size:15px; margin:0 0 8px; font-weight:800;}
-    .list{
-      margin:0;
-      padding-left:18px;
-      color: rgba(233,236,241,.76);
-      font-size:13px;
-      line-height:1.6;
+    /* Avoid section */
+    .avoidGrid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:16px;
+      margin-top:18px;
     }
-    .list li{margin:6px 0;}
+    .avoidGrid .card h3{margin:0 0 8px; font-size:16px;}
+    .avoidGrid ul{margin:0; padding-left:18px; color:rgba(233,236,241,.86)}
+    .avoidGrid li{margin:8px 0; font-size:13.5px;}
 
     /* Enquiry */
-    .panel{
-      border-radius: var(--radius2);
-      border:1px solid rgba(233,236,241,.10);
-      background: rgba(15,19,34,.55);
+    .enquiryShell{
+      position:relative;
+      border-radius:var(--radius2);
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(16,19,31,.60);
       box-shadow: var(--shadow);
       padding:18px;
+      overflow:hidden;
     }
-    .formGrid2{
+    .enquiryShell::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(720px 420px at 18% 12%, rgba(123,44,191,.16), transparent 60%),
+        radial-gradient(650px 420px at 80% 22%, rgba(168,85,247,.10), transparent 60%);
+      pointer-events:none;
+    }
+    .enquiryShell > *{position:relative;}
+    .formGrid{
       display:grid;
       grid-template-columns: 1fr 1fr;
       gap:12px;
+      margin-top:14px;
     }
     .formGrid3{
       display:grid;
-      grid-template-columns: 2fr 1.2fr 1fr; /* Address / Town / Postcode */
+      grid-template-columns: 2fr 1.2fr 1fr;
       gap:12px;
     }
-    @media (max-width:980px){
-      .formGrid2, .formGrid3{grid-template-columns:1fr;}
+    .field{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
     }
     label{
-      display:block;
-      font-size:11px;
-      letter-spacing:.18em;
+      font-size:12px;
+      letter-spacing:.12em;
       text-transform:uppercase;
-      color: rgba(233,236,241,.55);
-      margin:0 0 8px;
+      color:rgba(233,236,241,.70);
     }
     input, select, textarea{
       width:100%;
       padding:12px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(233,236,241,.12);
-      background: rgba(7,8,12,.55);
-      color: rgba(233,236,241,.92);
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(0,0,0,.22);
+      color:var(--text);
       outline:none;
-      transition: border-color .18s ease, background .18s ease;
+      transition: border-color .14s ease, background .14s ease;
       font-size:14px;
     }
     input:focus, select:focus, textarea:focus{
-      border-color: rgba(168,85,247,.45);
-      background: rgba(7,8,12,.62);
+      border-color: rgba(168,85,247,.40);
+      background: rgba(0,0,0,.26);
     }
     textarea{min-height:110px; resize:vertical;}
-    .hint{
-      font-size:12px;
-      color: rgba(233,236,241,.62);
-      line-height:1.5;
-      margin-top:10px;
-    }
-    .actions{
+    .formActions{
       display:flex;
       gap:10px;
-      align-items:center;
       flex-wrap:wrap;
-      margin-top:12px;
+      align-items:center;
+      margin-top:14px;
     }
-    .smallMeta{
-      color: rgba(233,236,241,.60);
+    .hint{
+      color:rgba(233,236,241,.62);
+      font-size:12.5px;
+      margin-top:10px;
+      max-width:95ch;
+    }
+    .ref{
+      color:rgba(233,236,241,.62);
       font-size:12px;
       margin-left:auto;
       white-space:nowrap;
     }
-    .toggleRow{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:12px;
-    }
 
-    /* Footer */
-    footer{
-      padding:26px 0;
-      border-top:1px solid rgba(233,236,241,.10);
-      color: rgba(233,236,241,.70);
-      font-size:13px;
+    .structured{
+      margin-top:16px;
+      padding-top:14px;
+      border-top:1px solid rgba(255,255,255,.10);
+      display:none;
     }
-    .footRow{
+    .structured.show{display:block;}
+
+    .footer{
+      padding:26px 0;
+      border-top:1px solid rgba(255,255,255,.10);
+      background:rgba(11,12,16,.75);
+    }
+    .footerRow{
       display:flex;
-      align-items:flex-start;
       justify-content:space-between;
       gap:16px;
       flex-wrap:wrap;
+      align-items:flex-start;
+      color:rgba(233,236,241,.72);
+      font-size:13px;
     }
-    .footLinks{display:flex; gap:12px; flex-wrap:wrap;}
-    .footLinks a{color: rgba(233,236,241,.70);}
-    .footLinks a:hover{color: rgba(233,236,241,.92);}
+    .footer a{color:rgba(233,236,241,.82)}
+    .footer a:hover{text-decoration:underline}
+    .badgeMini{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+    .badgeMini span{
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.05);
+      color:rgba(233,236,241,.86);
+      font-size:12px;
+    }
+
+    /* Scroll anchors: prevent sticky nav overlap */
+    #fireRisk, #fireDoors, #healthSafety, #energy, #enquiry { scroll-margin-top: calc(var(--navH) + 24px); }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      :root{ --navH: 74px; }
+      .navInner{gap:10px;}
+      .brand{min-width:auto;}
+      .brandMark{width:92px;}
+      .brandTag{font-size:12px;}
+      h1{font-size:34px;}
+      h2{font-size:28px;}
+      .heroGrid{grid-template-columns: 1fr;}
+      .chips{grid-template-columns:1fr;}
+      .grid3{grid-template-columns:1fr;}
+      .feature{grid-template-columns:1fr;}
+      .serviceCards{grid-template-columns:1fr;}
+      .avoidGrid{grid-template-columns:1fr;}
+      .ctaRow{min-width:auto;}
+      .formGrid{grid-template-columns:1fr;}
+      .formGrid3{grid-template-columns:1fr;}
+    }
   </style>
 </head>
 
 <body>
-
-  <!-- NAV -->
   <header class="nav">
     <div class="container">
       <div class="navInner">
-        <a class="brand" href="./" aria-label="FHASE home">
-          <img class="brandMark" src="assets/images/fhase-logo.png" alt="FHASE logo" />
+        <a class="brand" href="#top" aria-label="FHASE home">
+          <img class="brandMark" src="assets/images/fhase-logo.png" alt="FHASE - Fire | Health &amp; Safety | Energy" />
           <div class="brandText">
+            <strong>FHASE</strong>
             <div class="brandTag">Fire • Health &amp; Safety • Energy</div>
           </div>
         </a>
 
         <nav class="navLinks" aria-label="Primary">
-  <a href="#fireRisk">Fire Risk</a>
-  <a href="#fireDoors">Fire Doors</a>
-  <a href="#healthSafety">Health &amp; Safety</a>
-  <a href="#energy">Energy</a>
-  <a href="#enquiry">Discuss Your Environment</a>
-</nav>
+          <a href="#fireRisk">Fire Risk</a>
+          <a href="#fireDoors">Fire Doors</a>
+          <a href="#healthSafety">Health &amp; Safety</a>
+          <a href="#energy">Energy</a>
+          <a href="#enquiry">Enquiry</a>
+        </nav>
 
         <div class="ctaRow">
-          <a class="btn" href="mailto:info@fhase.uk?subject=FHASE%20Simple%20Enquiry">Simple email</a>
+          <a class="btn btnGhost" href="mailto:info@fhase.uk?subject=FHASE%20Simple%20Enquiry">Simple email</a>
           <a class="btn btnPrimary" href="#enquiry">Request Consultation</a>
         </div>
       </div>
     </div>
   </header>
 
-  <main>
-
+  <main id="top">
     <!-- HERO -->
-    <section class="hero" id="top">
+    <section class="hero" aria-label="FHASE overview">
       <div class="container">
         <div class="heroGrid">
           <div>
-            <div class="kicker">Operationally Aware • Structured Oversight • Clear Priorities</div>
-
-            <h1>
-              Integrated facility risk oversight across
-              <span class="gradWord">Fire</span>, <span class="gradWord">Health &amp; Safety</span> and
-              <span class="gradWord">Energy</span> interfaces.
-            </h1>
-
-            <p class="lead">
-              FHASE consolidates separate inputs into one structured, operationally aware view of risk —
-              aligned to continuity, efficiency and clear prioritisation for commercial and infrastructure-aligned
-              environments across Kent and the South East (UK).
-            </p>
-
-            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:6px;">
-              <a class="btn btnPrimary" href="#services">Explore Services</a>
-              <a class="btn" href="#enquiry">Discuss Your Environment</a>
+            <div class="pillRow">
+              <span class="pill">Operationally aware</span>
+              <span class="pill">Structured oversight</span>
+              <span class="pill">Clear priorities</span>
             </div>
 
-            <div class="pillRow">
-              <div class="pill">Single, coordinated site engagement</div>
-              <div class="pill">Consolidated reporting &amp; action priorities</div>
-              <div class="pill">Operational context built into scope</div>
-              <div class="pill">Commercial-first, non-domestic focus</div>
+            <h1>Integrated facility risk oversight<br/>across Fire, Health &amp; Safety and <span class="accent">Energy</span> interfaces.</h1>
+
+            <p class="lead">
+              FHASE consolidates separate inputs into one structured, operationally aware view of risk - aligned to continuity,
+              efficiency and clear prioritisation for commercial and infrastructure-aligned environments across Kent and the South East (UK).
+            </p>
+
+            <div class="heroCtas">
+              <a class="btn btnPrimary" href="#services">Explore Services</a>
+              <a class="btn btnGhost" href="#enquiry">Discuss Your Environment</a>
+            </div>
+
+            <div class="chips" aria-label="Key outcomes">
+              <div class="chip">Single, coordinated site engagement</div>
+              <div class="chip">Consolidated reporting &amp; action priorities</div>
+              <div class="chip">Operational context built into scope</div>
+              <div class="chip">Commercial-first, non-domestic focus</div>
             </div>
           </div>
 
-          <aside class="asideCard" aria-label="At-a-glance">
-            <h3 class="asideTitle">At-a-glance</h3>
-            <p class="asideText">
-              Designed for organisations that need clarity without distraction —
-              one coherent framework, not disconnected outputs.
+          <aside class="panel" aria-label="At-a-glance">
+            <h3>At-a-glance</h3>
+            <p style="margin:0 0 12px; color:rgba(233,236,241,.78); font-size:13.5px;">
+              Designed for organisations that need clarity without distraction - one coherent framework, not disconnected outputs.
             </p>
-
-            <div class="badgeRow">
+            <div class="badgeRow" aria-label="Environments">
               <span class="badge">Commercial Operations</span>
               <span class="badge">Accommodation Facilities</span>
               <span class="badge">Industrial</span>
               <span class="badge">Infrastructure-aligned</span>
             </div>
-
-            <div class="asideMeta">
+            <p style="margin:12px 0 0; color:rgba(233,236,241,.74); font-size:13px;">
               Service coverage: <strong>Kent &amp; South East</strong>, with selected national projects where alignment justifies.
-            </div>
+            </p>
           </aside>
         </div>
       </div>
@@ -589,68 +622,65 @@
     <div class="divider"></div>
 
     <!-- FRAMEWORK -->
-    <section class="tightBottom">
+    <section id="framework" class="tightBottom">
       <div class="container">
         <div class="label">Framework</div>
         <h2>One framework. Clear accountability.</h2>
-        <p class="lead">
-          FHASE structures engagements to reduce duplication, align actions to operational reality and provide
-          a consolidated, prioritised view of risk.
-        </p>
+        <p class="lead">FHASE structures engagements to reduce duplication, align actions to operational reality and provide a consolidated, prioritised view of risk.</p>
 
         <div class="grid3">
           <div class="card">
-            <h3>Integrated attendance</h3>
-            <p>Fire, H&amp;S and energy interfaces assessed in context — minimising disruption and repeated site visits.</p>
+            <h3 style="margin:0 0 8px; font-size:16px;">Integrated attendance</h3>
+            <p style="margin:0; color:rgba(233,236,241,.80); font-size:13.5px;">
+              Fire, H&amp;S and energy interfaces assessed in context - minimising disruption and repeated site visits.
+            </p>
           </div>
           <div class="card">
-            <h3>Consolidated reporting</h3>
-            <p>One action view with clear priorities and practical next steps — evidence-led and structured.</p>
+            <h3 style="margin:0 0 8px; font-size:16px;">Consolidated reporting</h3>
+            <p style="margin:0; color:rgba(233,236,241,.80); font-size:13.5px;">
+              One action view with clear priorities and practical next steps - evidence-led and structured.
+            </p>
           </div>
           <div class="card">
-            <h3>Defined scope &amp; governance</h3>
-            <p>Clear remit, boundaries and accountability aligned to duty-holder needs and operational continuity.</p>
+            <h3 style="margin:0 0 8px; font-size:16px;">Defined scope &amp; governance</h3>
+            <p style="margin:0; color:rgba(233,236,241,.80); font-size:13.5px;">
+              Clear remit, boundaries and accountability aligned to duty-holder needs and operational continuity.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- purple transition (thin) -->
     <div class="dividerPurple"></div>
 
-    <!-- FIRE DOOR FEATURE -->
-    <section class="tightTop tightBottom">
+    <!-- FIRE DOORS FEATURE -->
+    <section id="fireDoors" class="tightTop">
       <div class="container">
         <div class="label">Practical assurance</div>
-        <h2>Fire Door Inspection &amp; action-focused reporting</h2>
-        <p class="lead">
-          Fire doors are life-safety systems — not joinery items. Inspection is structured around functional integrity,
-          compartmentation performance and operational risk, with clear prioritised actions.
-        </p>
+        <h2>Fire Door inspection &amp; action-focused reporting</h2>
+        <p class="lead">Fire doors are life-safety systems - not joinery items. Inspection is structured around functional integrity, compartmentation performance and operational risk, with clear prioritised actions.</p>
 
         <div class="feature">
           <div class="card">
-            <h3>What is assessed</h3>
-            <div class="badgeRowWide">
+            <h3 style="margin:0 0 8px; font-size:16px;">What is assessed</h3>
+            <div class="badgeRow">
               <span class="badge">Leaf, frame &amp; ironmongery</span>
               <span class="badge">Self-closers &amp; latching</span>
               <span class="badge">Gaps, seals &amp; interfaces</span>
               <span class="badge">Compartmentation connections</span>
             </div>
-
-            <p style="margin-top:12px; color:rgba(233,236,241,.72); font-size:13px; line-height:1.55;">
-              Reporting is prioritised and aligned to duty-holder risk — supporting efficient action planning without unnecessary disruption.
+            <p style="margin:12px 0 0; color:rgba(233,236,241,.80); font-size:13.5px;">
+              Reporting is prioritised and aligned to duty-holder risk - supporting efficient action planning without unnecessary disruption.
             </p>
-
             <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
-              <a class="btn" href="fire-door-inspections-kent.html">View Fire Door Inspections →</a>
-              <a class="btn" href="#enquiry">Book a structured review →</a>
+              <a class="textLink" href="#enquiry">Book a structured review &rarr;</a>
+              <a class="textLink" href="mailto:info@fhase.uk?subject=FHASE%20Fire%20Door%20Enquiry">Simple email &rarr;</a>
             </div>
           </div>
 
           <div class="card">
-            <h3>Why it matters operationally</h3>
-            <ul class="list">
+            <h3 style="margin:0 0 8px; font-size:16px;">Why it matters operationally</h3>
+            <ul>
               <li>Reduces uncertainty around compartmentation integrity</li>
               <li>Supports prioritised remediation planning</li>
               <li>Improves confidence in life-safety arrangements</li>
@@ -668,64 +698,59 @@
       <div class="container">
         <div class="label">Services</div>
         <h2>Structured advisory across core operational risk interfaces</h2>
-        <p class="lead">
-          Service areas are presented as structured advisory pillars. Dedicated service pages provide depth and method —
-          supporting clearer scoping and stronger search visibility.
-        </p>
+        <p class="lead">Service areas are presented as structured advisory pillars. Dedicated service pages can be added later - for launch, navigation anchors keep the experience clean and fast.</p>
 
-        <div class="grid3">
-          <div class="card">
+        <div class="serviceCards">
+          <div class="card" id="fireRisk">
             <h3>Fire Risk &amp; Life Safety</h3>
-            <p>Commercial fire risk assessment aligned to operational continuity — clear priorities, evidence-led reporting and practical next steps.</p>
-            <a class="textLink" href="fire-risk-assessment-kent.html">View Fire Risk →</a>
+            <p>Commercial fire risk assessment aligned to operational continuity - clear priorities, evidence-led reporting and practical next steps.</p>
+            <a href="#enquiry">Discuss Fire Risk &rarr;</a>
           </div>
-          <div class="card">
+
+          <div class="card" id="healthSafety">
             <h3>Health &amp; Safety Systems</h3>
-            <p>Operationally aware H&amp;S governance and system advisory — supporting safe flow, contractor control and sensible assurance.</p>
-            <a class="textLink" href="health-and-safety-consultant-kent.html">View Health &amp; Safety →</a>
+            <p>Operationally aware H&amp;S governance and system advisory - supporting safe flow, contractor control and sensible assurance.</p>
+            <a href="#enquiry">Discuss H&amp;S &rarr;</a>
           </div>
-          <div class="card">
+
+          <div class="card" id="energy">
             <h3>Energy Safety Interfaces</h3>
-            <p>Risk interfaces around solar PV, EV charging and energy systems — aligned to safe integration, operations and continuity.</p>
-            <a class="textLink" href="energy-safety-interfaces.html">View Energy →</a>
+            <p>Risk interfaces around solar PV, EV charging and energy systems - aligned to safe integration, operations and continuity.</p>
+            <a href="#enquiry">Discuss Energy &rarr;</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- moved later so it clearly reads as “avoid this” -->
     <div class="dividerPurple"></div>
 
     <!-- AVOID -->
-    <section id="avoid" class="tightTop">
+    <section class="tightTop tightBottom">
       <div class="container">
         <div class="label">Avoid</div>
         <h2>Avoid fragmented compliance. Reduce disruption.</h2>
-        <p class="lead">
-          Where fire, health &amp; safety and energy risks are handled separately, organisations often inherit duplicated attendance,
-          inconsistent priorities and unclear accountability. FHASE removes this by consolidating oversight into one structured framework.
-        </p>
+        <p class="lead">Where fire, health &amp; safety and energy risks are handled separately, organisations often inherit duplicated attendance, inconsistent priorities and unclear accountability. FHASE removes this by consolidating oversight into one structured framework.</p>
 
-        <div class="grid3">
+        <div class="avoidGrid">
           <div class="card">
-            <div class="avoidCardTitle">Multiple consultants (avoid)</div>
-            <ul class="list">
+            <h3>Multiple consultants (avoid)</h3>
+            <ul>
               <li>Duplicated attendance</li>
               <li>Repeated questioning</li>
               <li>Split accountability</li>
             </ul>
           </div>
           <div class="card">
-            <div class="avoidCardTitle">Multiple reports (avoid)</div>
-            <ul class="list">
+            <h3>Multiple reports (avoid)</h3>
+            <ul>
               <li>Overlapping actions</li>
               <li>Inconsistent priorities</li>
               <li>Unclear governance</li>
             </ul>
           </div>
           <div class="card">
-            <div class="avoidCardTitle">What FHASE replaces it with</div>
-            <ul class="list">
+            <h3>What FHASE replaces it with</h3>
+            <ul>
               <li>Single engagement plan</li>
               <li>Consolidated action priorities</li>
               <li>Operationally aligned oversight</li>
@@ -735,319 +760,305 @@
       </div>
     </section>
 
-    <div class="divider"></div>
+    <div class="dividerPurple"></div>
 
     <!-- ENQUIRY -->
     <section id="enquiry" class="tightTop">
       <div class="container">
-        <div class="label">Discuss Your Environment</div>
+        <div class="label">Discuss your environment</div>
         <h2>Tell FHASE about the operational setting and what should be achieved</h2>
-        <p class="lead">
-          Start with a brief outline. A structured intake can then be completed where appropriate —
-          supporting accurate scoping and reduced disruption.
-        </p>
+        <p class="lead">Start with a brief outline. A structured intake can then be completed where appropriate - supporting accurate scoping and reduced disruption.</p>
 
-        <div class="panel">
-          <form id="fhaseForm" autocomplete="on">
-
-            <!-- Quick outline (always visible) -->
-            <div class="formGrid2">
-              <div>
-                <label for="contactName">Name</label>
-                <input id="contactName" name="contactName" placeholder="Full name" />
+        <div class="enquiryShell">
+          <form id="enquiryForm" autocomplete="on">
+            <div class="formGrid">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" placeholder="Full name" />
               </div>
-              <div>
+              <div class="field">
                 <label for="email">Email</label>
                 <input id="email" name="email" type="email" placeholder="name@company.com" />
               </div>
-
-              <div>
+              <div class="field">
                 <label for="org">Organisation</label>
-                <input id="org" name="org" placeholder="Organisation name" />
+                <input id="org" name="organisation" placeholder="Organisation name" />
               </div>
-              <div>
+              <div class="field">
                 <label for="website">Company website</label>
                 <input id="website" name="website" placeholder="https://www.company.com" />
               </div>
             </div>
 
-            <div style="margin-top:12px;">
+            <div class="field" style="margin-top:12px;">
               <label for="brief">Brief outline</label>
               <textarea id="brief" name="brief" placeholder="Location(s), environment type, and what outcome should be achieved."></textarea>
             </div>
 
-            <div class="actions">
-              <button class="btn btnPrimary" type="button" id="toggleIntakeBtn">Begin structured enquiry</button>
-              <a class="btn" href="mailto:info@fhase.uk?subject=FHASE%20Simple%20Enquiry">Simple email</a>
-              <button class="btn" type="button" id="downloadXeroBtn">Download Xero-ready CSV (contact)</button>
-              <span class="smallMeta" id="refId">Reference: FH-2026-001</span>
+            <div class="formActions">
+              <button class="btn btnPrimary" type="button" id="toggleStructured">Begin structured enquiry</button>
+              <button class="btn btnGhost" type="button" id="downloadCsv">Download Xero-ready CSV (contact)</button>
+              <a class="btn btnGhost" href="mailto:info@fhase.uk?subject=FHASE%20Simple%20Enquiry">Simple email</a>
+              <div class="ref" id="refText"></div>
             </div>
 
             <div class="hint">
               The CSV contains contact fields only (organisation, contact, email, phone/address if provided) to avoid mixing advisory data into accounting records.
             </div>
 
-            <!-- Structured intake (toggle) -->
-            <div id="structuredIntake" style="display:none; margin-top:18px;">
-              <div class="label" style="margin-bottom:12px;">Structured intake</div>
+            <div class="structured" id="structuredBlock" aria-hidden="true">
+              <div class="label" style="margin:10px 0 0;">Structured intake</div>
 
-              <div class="formGrid2">
-                <div>
+              <div class="formGrid">
+                <div class="field">
                   <label for="phone">Phone</label>
                   <input id="phone" name="phone" placeholder="+44 ..." />
                 </div>
-                <div>
+                <div class="field">
                   <label for="envType">Environment type</label>
-                  <select id="envType" name="envType">
-                    <option value="">Select…</option>
+                  <select id="envType" name="environmentType">
+                    <option value="">Select...</option>
                     <option>Commercial operations</option>
                     <option>Accommodation facilities</option>
+                    <option>Warehousing & logistics</option>
                     <option>Industrial</option>
                     <option>Infrastructure-aligned</option>
                     <option>Renewable / energy sites</option>
-                    <option>Mission critical / data centre aligned</option>
+                    <option>Data centres / mission critical</option>
+                    <option>Other</option>
                   </select>
                 </div>
               </div>
 
-              <!-- Address line / Town / Postcode (3 boxes) -->
               <div class="formGrid3" style="margin-top:12px;">
-                <div>
+                <div class="field">
                   <label for="addrLine">Site address</label>
-                  <input id="addrLine" name="addrLine" placeholder="Address line" />
+                  <input id="addrLine" name="addressLine" placeholder="Address line" />
                 </div>
-                <div>
+                <div class="field">
                   <label for="town">Town</label>
                   <input id="town" name="town" placeholder="Town" />
                 </div>
-                <div>
+                <div class="field">
                   <label for="postcode">Postcode</label>
                   <input id="postcode" name="postcode" placeholder="Postcode" />
                 </div>
               </div>
 
-              <div class="formGrid2" style="margin-top:12px;">
-                <div>
-                  <label for="floorArea">Approx. facility size</label>
-                  <input id="floorArea" name="floorArea" placeholder="e.g., 2,500 m²" />
+              <div class="formGrid" style="margin-top:12px;">
+                <div class="field">
+                  <label for="area">Approx. facility size</label>
+                  <input id="area" name="facilitySize" placeholder="e.g., 2,500 m²" />
                 </div>
-                <div>
+                <div class="field">
                   <label for="employees">Approx. number of employees</label>
                   <input id="employees" name="employees" placeholder="e.g., 45" />
                 </div>
-              </div>
-
-              <div class="formGrid2" style="margin-top:12px;">
-                <div>
+                <div class="field">
                   <label for="hours">Working hours / shifts</label>
                   <input id="hours" name="hours" placeholder="e.g., 24/7, days only, 2-shift" />
                 </div>
-                <div>
-                  <label for="primaryFocus">Primary focus</label>
-                  <select id="primaryFocus" name="primaryFocus">
-                    <option value="">Select…</option>
-                    <option>Fire risk assessment / audit</option>
+                <div class="field">
+                  <label for="focus">Primary focus</label>
+                  <select id="focus" name="primaryFocus">
+                    <option value="">Select...</option>
+                    <option>Fire risk assessment / life safety</option>
                     <option>Fire doors / compartmentation assurance</option>
-                    <option>Contractor governance / RAMS</option>
+                    <option>Contractor governance / RAMS review</option>
                     <option>Operational risk assessments</option>
-                    <option>Energy interface safety (PV / EV / battery)</option>
+                    <option>Audit readiness / compliance support</option>
+                    <option>Energy interfaces (PV / EV / battery)</option>
                     <option>Multiple areas (integrated)</option>
                   </select>
                 </div>
               </div>
 
-              <div style="margin-top:12px;">
+              <div class="field" style="margin-top:12px;">
                 <label for="context">Operational context / concerns</label>
                 <textarea id="context" name="context" placeholder="What needs to be achieved? What operational constraints should be considered?"></textarea>
               </div>
 
-              <div class="toggleRow">
-                <button class="btn btnPrimary" type="button" id="copySummaryBtn">Copy structured summary</button>
-                <button class="btn" type="button" id="hideIntakeBtn">Hide structured intake</button>
-                <div class="hint" style="margin:0; flex:1;">
+              <div class="formActions">
+                <button class="btn btnPrimary" type="button" id="copySummary">Copy structured summary</button>
+                <button class="btn btnGhost" type="button" id="hideStructured">Hide structured intake</button>
+                <div class="hint" style="margin:0; max-width:none;">
                   Copying creates a clean scope note for email/CRM. A submission endpoint can be added later without redesign.
                 </div>
               </div>
             </div>
           </form>
 
-          <div style="margin-top:16px;">
-            <div class="panel" style="background: rgba(7,8,12,.35); box-shadow:none;">
-              <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
-                <div>
-                  <div style="font-weight:800; margin-bottom:6px;">Service coverage</div>
-                  <div style="color: rgba(233,236,241,.72); font-size:13px; line-height:1.55;">
-                    Structured advisory delivered across Kent and the South East (UK). Selected national projects supported where operational alignment justifies.
-                  </div>
-                </div>
-                <div>
-                  <div style="font-weight:800; margin-bottom:6px;">Professional framework</div>
-                  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
-                    <span class="badge">NEBOSH</span>
-                    <span class="badge">IOSH</span>
-                    <span class="badge">ProQual</span>
-                    <span class="badge">EAL</span>
-                    <span class="badge">FDIS</span>
-                  </div>
-                </div>
-              </div>
+          <div class="card" style="margin-top:16px; background:rgba(255,255,255,.045);">
+            <div class="label" style="margin-bottom:6px;">Service coverage</div>
+            <div style="color:rgba(233,236,241,.82); font-size:13.5px;">
+              Structured advisory delivered across Kent and the South East (UK). Selected national projects supported where operational alignment justifies.
+            </div>
+
+            <div class="label" style="margin-top:14px; margin-bottom:6px;">Professional framework</div>
+            <div class="badgeMini" aria-label="Professional framework badges">
+              <span>NEBOSH</span>
+              <span>IOSH</span>
+              <span>ProQual</span>
+              <span>EAL</span>
+              <span>FDIS</span>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
     <div class="divider"></div>
 
-    <!-- FOOTER -->
-    <footer>
+    <footer class="footer">
       <div class="container">
-        <div class="footRow">
+        <div class="footerRow">
           <div>
-            <div style="font-weight:900; letter-spacing:.3px;">FHASE</div>
-            <div style="margin-top:6px; color:rgba(233,236,241,.65);">Fire • Health &amp; Safety • Energy</div>
+            <strong style="letter-spacing:.10em;">FHASE</strong><br/>
+            Fire • Health &amp; Safety • Energy<br/>
+            <span style="color:rgba(233,236,241,.60);">Competence-led • Evidence-based • Proportionate</span>
           </div>
 
           <div>
-            <div style="font-weight:800; margin-bottom:6px;">Contact</div>
-            <div style="color:rgba(233,236,241,.70); line-height:1.6;">
-              Email: <a ="mailto:info@fhase.uk">info@fhase.uk</a><br/>
-              Coverage: Kent &amp; South East (UK)
-            </div>
+            <strong>Contact</strong><br/>
+            Email: <a href="mailto:info@fhase.uk">info@fhase.uk</a><br/>
+            Coverage: Kent &amp; South East (UK)
           </div>
 
-          <div class="footLinks">
-            <a href="privacy.html">Privacy</a>
-            <span style="opacity:.35;">•</span>
-            <a href="terms.html">Terms</a>
-            <span style="opacity:.35;">•</span>
-            <a href="#enquiry">Discuss Your Environment</a>
+          <div>
+            <a href="privacy.html">Privacy</a> •
+            <a href="terms.html">Terms</a> •
+            <a href="#enquiry">Enquiry</a><br/>
+            <span style="color:rgba(233,236,241,.55);">© <span id="year"></span> FHASE. All rights reserved.</span>
           </div>
-        </div>
-
-        <div style="margin-top:16px; color:rgba(233,236,241,.55); font-size:12px;">
-          © <span id="year"></span> FHASE. All rights reserved.
         </div>
       </div>
     </footer>
-
   </main>
 
   <script>
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Reference ID
-    function makeRef(){
-      const now = new Date();
-      const y = now.getFullYear();
-      const m = String(now.getMonth()+1).padStart(2,'0');
-      const d = String(now.getDate()).padStart(2,'0');
-      const n = Math.floor(100 + Math.random()*900);
-      return `FH-${y}-${m}${d}-${n}`;
-    }
-    const ref = makeRef();
-    document.getElementById('refId').textContent = `Reference: ${ref}`;
+    // Reference ID (simple for the day)
+    (function(){
+      const d = new Date();
+      const y = d.getFullYear();
+      const m = String(d.getMonth()+1).padStart(2,'0');
+      const day = String(d.getDate()).padStart(2,'0');
+      const rand = Math.floor(100 + Math.random()*900);
+      document.getElementById('refText').textContent = 'Reference: FH-' + y + '-' + m + day + '-' + rand;
+    })();
 
-    // Toggle structured intake
-    const intake = document.getElementById('structuredIntake');
-    document.getElementById('toggleIntakeBtn').addEventListener('click', () => {
-      intake.style.display = 'block';
-      intake.scrollIntoView({behavior:'smooth', block:'start'});
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const href = a.getAttribute('href');
+        if(!href || href === '#') return;
+        const el = document.querySelector(href);
+        if(!el) return;
+        e.preventDefault();
+        el.scrollIntoView({behavior:'smooth', block:'start'});
+        history.replaceState(null, '', href);
+      });
     });
-    document.getElementById('hideIntakeBtn').addEventListener('click', () => {
-      intake.style.display = 'none';
+
+    // Structured intake toggle
+    const structured = document.getElementById('structuredBlock');
+    const toggleBtn = document.getElementById('toggleStructured');
+    const hideBtn = document.getElementById('hideStructured');
+
+    function showStructured(){
+      structured.classList.add('show');
+      structured.setAttribute('aria-hidden','false');
+      toggleBtn.textContent = 'Structured intake open';
+      toggleBtn.classList.add('btnGhost');
+      toggleBtn.classList.remove('btnPrimary');
+      structured.scrollIntoView({behavior:'smooth', block:'nearest'});
+    }
+    function hideStructured(){
+      structured.classList.remove('show');
+      structured.setAttribute('aria-hidden','true');
+      toggleBtn.textContent = 'Begin structured enquiry';
+      toggleBtn.classList.add('btnPrimary');
+      toggleBtn.classList.remove('btnGhost');
+    }
+    toggleBtn.addEventListener('click', ()=>{
+      structured.classList.contains('show') ? hideStructured() : showStructured();
     });
+    hideBtn.addEventListener('click', hideStructured);
+
+    // Build a clean summary
+    function buildSummary(){
+      const get = (id)=> (document.getElementById(id)?.value || '').trim();
+      const lines = [];
+      lines.push('FHASE Enquiry Summary');
+      lines.push('-------------------');
+      lines.push('Name: ' + get('name'));
+      lines.push('Email: ' + get('email'));
+      lines.push('Organisation: ' + get('org'));
+      lines.push('Website: ' + get('website'));
+      lines.push('');
+      lines.push('Brief outline:');
+      lines.push(get('brief') || '(not provided)');
+      if(structured.classList.contains('show')){
+        lines.push('');
+        lines.push('Structured intake:');
+        lines.push('Phone: ' + get('phone'));
+        lines.push('Environment type: ' + get('envType'));
+        lines.push('Site address: ' + [get('addrLine'), get('town'), get('postcode')].filter(Boolean).join(', '));
+        lines.push('Approx. facility size: ' + get('area'));
+        lines.push('Approx. employees: ' + get('employees'));
+        lines.push('Working hours / shifts: ' + get('hours'));
+        lines.push('Primary focus: ' + get('focus'));
+        lines.push('');
+        lines.push('Operational context / concerns:');
+        lines.push(get('context') || '(not provided)');
+      }
+      return lines.join('\n');
+    }
 
     // Copy summary
-    function v(id){ return (document.getElementById(id)?.value || '').trim(); }
-    function line(label, value){ return value ? `${label}: ${value}` : null; }
-
-    document.getElementById('copySummaryBtn').addEventListener('click', async () => {
-      const lines = [
-        `FHASE Structured Summary (${ref})`,
-        '',
-        line('Organisation', v('org')),
-        line('Website', v('website')),
-        line('Contact', v('contactName')),
-        line('Email', v('email')),
-        line('Phone', v('phone')),
-        '',
-        line('Brief outline', v('brief')),
-        '',
-        line('Environment type', v('envType')),
-        line('Primary focus', v('primaryFocus')),
-        '',
-        line('Address line', v('addrLine')),
-        line('Town', v('town')),
-        line('Postcode', v('postcode')),
-        '',
-        line('Approx. facility size', v('floorArea')),
-        line('Approx. employees', v('employees')),
-        line('Working hours / shifts', v('hours')),
-        '',
-        line('Operational context / concerns', v('context'))
-      ].filter(Boolean).join('\n');
-
+    document.getElementById('copySummary').addEventListener('click', async ()=>{
+      const txt = buildSummary();
       try{
-        await navigator.clipboard.writeText(lines);
-        const btn = document.getElementById('copySummaryBtn');
-        const prev = btn.textContent;
-        btn.textContent = 'Copied ✓';
-        setTimeout(()=>btn.textContent = prev, 1200);
+        await navigator.clipboard.writeText(txt);
+        alert('Structured summary copied to clipboard.');
       }catch(e){
-        alert('Copy failed in this browser. You can still select and copy manually.');
+        const ta = document.createElement('textarea');
+        ta.value = txt;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        alert('Structured summary copied.');
       }
     });
 
-    // Xero-ready CSV (contact-only)
-    document.getElementById('downloadXeroBtn').addEventListener('click', () => {
-      const organisation = v('org');
-      const contact = v('contactName');
-      const email = v('email');
-      const phone = v('phone');
-      const addrLine = v('addrLine');
-      const town = v('town');
-      const postcode = v('postcode');
-      const website = v('website');
-
-      const headers = [
-        'Name','ContactName','EmailAddress','PhoneNumber',
-        'AddressLine1','City','PostalCode','Website','Reference'
-      ];
-
+    // Xero-ready CSV (contact only)
+    document.getElementById('downloadCsv').addEventListener('click', ()=>{
+      const get = (id)=> (document.getElementById(id)?.value || '').trim();
+      const headers = ['Name','EmailAddress','Website','PhoneNumber','AddressLine1','City','PostalCode'];
       const row = [
-        organisation || '',
-        contact || '',
-        email || '',
-        phone || '',
-        addrLine || '',
-        town || '',
-        postcode || '',
-        website || '',
-        ref
-      ];
+        get('org') || get('name'),
+        get('email'),
+        get('website'),
+        get('phone'),
+        get('addrLine'),
+        get('town'),
+        get('postcode')
+      ].map(v => '"' + String(v || '').replaceAll('"','""') + '"');
 
-      const esc = (s) => {
-        const str = String(s ?? '');
-        if (/[",\n]/.test(str)) return `"${str.replace(/"/g,'""')}"`;
-        return str;
-      };
-
-      const csv = headers.map(esc).join(',') + '\n' + row.map(esc).join(',') + '\n';
+      const csv = headers.join(',') + '\n' + row.join(',') + '\n';
       const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
       const url = URL.createObjectURL(blob);
-
       const a = document.createElement('a');
       a.href = url;
-      a.download = `FHASE_Xero_Contact_${ref}.csv`;
+      a.download = 'fhase-contact-xero.csv';
       document.body.appendChild(a);
       a.click();
-      a.remove();
+      document.body.removeChild(a);
       URL.revokeObjectURL(url);
     });
   </script>
-
 </body>
 </html>
