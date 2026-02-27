@@ -73,7 +73,7 @@
       min-width:260px;
     }
     .brandMark{
-      width:140px;
+      width:110px;
       height:auto;
       display:block;
       border-radius:16px;
@@ -99,28 +99,40 @@
     }
 
     .navLinks{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      justify-content:center;
-      flex-wrap:wrap;
-      color:var(--muted);
-      font-size:14px;
-    }
-    .navLinks a{
-      padding:10px 10px;
-      border-radius:12px;
-      border:1px solid transparent;
-      transition: background .18s ease, border-color .18s ease, color .18s ease;
-      white-space:nowrap;
-    }
-    .navLinks a:hover{
-      background:rgba(255,255,255,.06);
-      border-color:rgba(255,255,255,.10);
-      color:var(--text);
-    }
-
-    .ctaRow{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+  font-size:14px;
+}
+.navLinks a{
+  padding:10px 14px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: rgba(233,236,241,.86);
+  transition: background .18s ease, border-color .18s ease, color .18s ease, transform .18s ease, box-shadow .18s ease;
+  white-space:nowrap;
+}
+.navLinks a:hover{
+  background: rgba(255,255,255,.10);
+  border-color: rgba(168,85,247,.30);
+  color: var(--text);
+  transform: translateY(-1px);
+  box-shadow:0 12px 24px rgba(0,0,0,.18);
+}
+.navLinks a.active{
+  background: linear-gradient(135deg, rgba(123,44,191,.95), rgba(168,85,247,.92));
+  border-color: rgba(168,85,247,.35);
+  color:#fff;
+  box-shadow:0 14px 30px rgba(123,44,191,.22);
+}
+.navLinks a:focus-visible{
+  outline:2px solid rgba(168,85,247,.55);
+  outline-offset:2px;
+}
+.ctaRow{
       display:flex;
       align-items:center;
       gap:10px;
@@ -695,25 +707,28 @@
 
     <!-- SERVICES (LIGHT) -->
     <section id="services" class="light">
+      <div id="fireRisk"></div>
+      <div id="healthSafety"></div>
+      <div id="energy"></div>
       <div class="container">
         <div class="label">Services</div>
         <h2>Structured advisory across core operational risk interfaces</h2>
         <p class="lead">Service areas are presented as structured advisory pillars. Dedicated service pages can be added later - for launch, navigation anchors keep the experience clean and fast.</p>
 
         <div class="serviceCards">
-          <div class="card" id="fireRisk">
+          <div class="card">
             <h3>Fire Risk &amp; Life Safety</h3>
             <p>Commercial fire risk assessment aligned to operational continuity - clear priorities, evidence-led reporting and practical next steps.</p>
             <a href="#enquiry">Discuss Fire Risk &rarr;</a>
           </div>
 
-          <div class="card" id="healthSafety">
+          <div class="card">
             <h3>Health &amp; Safety Systems</h3>
             <p>Operationally aware H&amp;S governance and system advisory - supporting safe flow, contractor control and sensible assurance.</p>
             <a href="#enquiry">Discuss H&amp;S &rarr;</a>
           </div>
 
-          <div class="card" id="energy">
+          <div class="card">
             <h3>Energy Safety Interfaces</h3>
             <p>Risk interfaces around solar PV, EV charging and energy systems - aligned to safe integration, operations and continuity.</p>
             <a href="#enquiry">Discuss Energy &rarr;</a>
@@ -1059,6 +1074,39 @@
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
     });
-  </script>
+  
+// Active nav highlighting (as you scroll)
+(function(){
+  const sections = ['fireRisk','fireDoors','healthSafety','energy','enquiry']
+    .map(id => document.getElementById(id))
+    .filter(Boolean);
+
+  const links = Array.from(document.querySelectorAll('.navLinks a[href^="#"]'));
+
+  function setActive(id){
+    links.forEach(a => a.classList.remove('active'));
+    const active = document.querySelector('.navLinks a[href="#' + id + '"]');
+    if(active) active.classList.add('active');
+  }
+
+  // Set active on click immediately (gives instant feedback)
+  links.forEach(a=>{
+    a.addEventListener('click', ()=>{
+      const href = a.getAttribute('href');
+      if(href && href.startsWith('#')) setActive(href.slice(1));
+    });
+  });
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        setActive(entry.target.id);
+      }
+    });
+  }, { root: null, threshold: 0.35 });
+
+  sections.forEach(s => io.observe(s));
+})();
+</script>
 </body>
 </html>
